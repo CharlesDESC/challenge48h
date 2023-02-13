@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Zen+Dots&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Zen+Dots&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
     <title>Challenge-48H</title>
 </head>
@@ -161,7 +160,7 @@
             <div class="carousel">
                 <div class="slides">
                     <a href="#"><img src="./img/morpion.png" alt="Morpion"></a>
-                    <a href="#"><img src="./img/justePrix.png" alt="justePrix"></a>
+                    <a href="./justeprix/justeprix.php"><img src="./img/justePrix.png" alt="justePrix"></a>
                     <a href="#"><img src="./img/cultureG.png" alt="cultureG"></a>
                     <a href="#"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
                 </div>

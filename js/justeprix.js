@@ -19,7 +19,6 @@ document.getElementById('valide').addEventListener("click", function () {
 
 function Devine() {
     var choisi = document.getElementById('nombre').value;
-    console.log("nb = " + choisi)
     var text = document.getElementById("ind")
     var essais = document.getElementById("essai")
     if (choisi.length > 0) {
@@ -41,7 +40,6 @@ function Devine() {
             if (choisi == num) {
                 window.alert("Bravo ! chiffre trouvé en " + NbEssais + " essais.");
                 location.reload();
-
             }
             if (NbEssais == 10) {
                 window.alert("Dommage, le nombre correct était : " + num);
