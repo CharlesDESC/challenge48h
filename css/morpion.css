@@ -7,8 +7,8 @@
     margin-bottom: 20px;
   }
 #fond{
-    background-color: rgb(20, 20, 20);
-    background-image: url(../img/test.jpg);
+    background-image: url(../img/grille.jpg);
+    border-radius: 30px;
     width: 740px; 
     height: 740px;
     margin: 0 auto;  
@@ -17,6 +17,12 @@
     justify-content: center; 
     align-items: center; 
     align-content: center;
+}
+
+body {
+    font-family: 'Game';
+    background-color: rgb(38, 38, 38);
+    color: rgb(224, 233, 255);
 }
   
   .square {
