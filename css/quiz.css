@@ -6,20 +6,21 @@
 
 :root {
   --hue-neutral: 23;
-  --hue-wrong: 23;
-  --hue-correct: 72;
+  --hue-wrong: 0;
+  --hue-correct: 71;
 }
 
 body {
   --hue: var(--hue-neutral);
-  margin:0;
-  padding:0;
-  display:flex;
+  margin: 0;
+  padding: 0;
+  display: flex;
   width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: hsl(var(--hue), 0%, 8%);
+  box-shadow: 10px 10px white;
 }
 
 body.correct {
@@ -59,14 +60,15 @@ body.correct {
 .btn.correct {
   --hue: var(--hue-correct);
   border:2px #c9e265 solid;
+  color:black;
 }
 
 .btn.wrong {
   --hue: var(--hue-wrong);
 }
 
-.btn-start, .btn-next {
-  font-size: 30px;
+.btn-start, .btn-next, .btn-quit {
+  font-size: 20px;
   font-weight: bold;
   padding: 10px;
 }
@@ -82,14 +84,14 @@ body.correct {
 }
 
 .btn-next {
-  background-color:hsl(0, 0%, 8%);
-  border:2px black solid;
+  background-color:hsl(var(--hue), 81%, 51%);
+  border:#e86b1e 2px solid;
   font-size:20px;
 }
 
 .btn-next:hover {
-  background-color:hsl(0, 0%, 20%);
-  border:2px black solid;
+  background-color:hsl(var(--hue), 81%, 60%);
+  border:#e86b1e 2px solid;
 }
 
 #question {
@@ -97,4 +99,36 @@ body.correct {
   background-color:hsl(0, 0%, 20%);
   color:white;
   text-align:center;
+}
+
+#score {
+  margin-top:20px;
+  padding:10px 0;
+  background-color:hsl(0, 0%, 20%);
+  color:white;
+  text-align:center;
+}
+
+#rules {
+  font-size:20px;
+  margin:20px 0;
+  padding:0 10px;
+}
+
+#rules strong {
+  font-size:20px;
+}
+
+#rules h1 {
+  padding:10px 0;
+  background-color:hsl(var(--hue), 81%, 51%);
+  color:white;
+  text-align:center;
+}
+
+#rules p {
+  font-size:20px;
+  color: white;
+  background-color:hsl(0, 0%, 20%);
+  padding:10px;
 }
