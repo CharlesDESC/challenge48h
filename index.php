@@ -259,7 +259,6 @@
 
         <div class="carousel">
             <div class="slides">
-
                 <h1 class="slide">Morpion</h1>
                 <h1 class="slide">Juste prix</h1>
                 <h1 class="slide">Test rapidite</h1>

@@ -39,7 +39,7 @@ th {
     padding-bottom: 20px;
 }
 
-.case {
+.caseBataille {
     height: 50px;
     width: 50px;
     background-color: rgb(224, 233, 255);
@@ -47,12 +47,14 @@ th {
 
 
 /* ********************************************************** */
-
+/* Carousel */
 
 .carousel {
     width: 300px;
     height: 250px;
     border-radius: 3px;
+    margin-top: 150px;
+    margin-left: 150px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
