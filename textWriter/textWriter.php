@@ -22,7 +22,6 @@
   <script type="text/javascript">
     var text;
     text = <?php echo $text; ?>;
-    console.log(text);
   </script>
   <script src="../js/textWriter.js"></script>
 </body>

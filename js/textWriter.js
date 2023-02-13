@@ -8,7 +8,6 @@ let point = 0;
 
 text = text.toLowerCase();
 text = text.split(" ");
-console.log(text);
 
 word.textContent = text[i] + " " + text[i + 1] + " " + text[i + 2];
 
@@ -31,6 +30,7 @@ document.addEventListener("keyup", (e) => {
       console.log(point);
       document.getElementById("inText").value = "";
       console.log("stop" + text.length);
+
 
       if (text.length - i > 3) {
       word.textContent = text[i] + " " + text[i + 1] + " " + text[i + 2];
