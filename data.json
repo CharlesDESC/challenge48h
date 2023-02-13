@@ -2,5 +2,24 @@
     "missile" : 1,
     "essai" : 5,   
     "reussite" : 3,
-    "mots" : ["symfony", "java" ,"python","php", "sql"]    
+    "mots" : ["symfony", "java" ,"python","php", "sql"],
+    "jeux" : [
+        {
+            "nom" : "Morpion",
+            "max_tentative" : 3
+        },
+        {
+            "nom" : "Quizz",
+            "max_tentative" : 3
+        },
+        {
+            "nom" : "Juste Prix",
+            "max_tentative" : 3
+        },
+        {
+            "nom" : "Speed Typing",
+            "max_tentative" : 3
+        }
+    
+    ] 
 }
