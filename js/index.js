@@ -35,14 +35,39 @@ document.querySelector(".prev-slide").addEventListener("click", function () {
 
 
 // bataille navale grille
+const tableau = ["A1", "A2", "A3"];
+let win = false;
 document.addEventListener('click', (e) => {
-    let elementId = e.target.id;
-    let element = document.getElementById(elementId);
-    if (element != null && element.id != 'plateau') {
-        if (!element.classList.contains('clicked')) {
-            console.log(elementId);
-            element.classList.add('clicked');
+
+    if (win == false) {
+        for (let step = 0; step < 2; step++) {
+            if (document.getElementById(tableau[step]).classList.contains('clicked')) {
+                win = true;
+            } else {
+                win = false;
+            }
+        }
+
+        let elementId = e.target.id;
+        let element = document.getElementById(elementId);
+        if (element != null && element.id != 'plateau') {
+            if (!element.classList.contains('clicked')) {
+                console.log(elementId);
+                element.classList.add('clicked');
+                if (tableau.includes(elementId)) {
+                    element.style.backgroundColor = 'green';
+                } else {
+                    element.style.backgroundColor = 'red';
+                }
+            }
+        }
+
+        if (win == true) {
+            alert("you win");
         }
     }
+
+
+
 }
 );
