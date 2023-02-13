@@ -35,7 +35,7 @@ document.querySelector(".prev-slide").addEventListener("click", function () {
 
 
 // bataille navale grille
-const tableau = ["A1", "A2", "A3"];
+const tableau = ["A5", "A4", "A3"];
 let win = false;
 document.addEventListener('click', (e) => {
 
@@ -56,8 +56,10 @@ document.addEventListener('click', (e) => {
                 element.classList.add('clicked');
                 if (tableau.includes(elementId)) {
                     element.style.backgroundColor = 'green';
+                    element.style.cursor = 'not-allowed';
                 } else {
                     element.style.backgroundColor = 'red';
+                    element.style.cursor = 'not-allowed';
                 }
             }
         }

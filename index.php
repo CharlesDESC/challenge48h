@@ -160,10 +160,10 @@
             <h1 class="titleMissile"><span class="span">5</span> Missiles</h1>
             <div class="carousel">
                 <div class="slides">
-                    <h1 class="slide">Morpion</h1>
-                    <h1 class="slide">Juste prix</h1>
-                    <h1 class="slide">Test rapidite</h1>
-                    <h1 class="slide">Question cultureG</h1>
+                    <a href="#"><img src="./img/morpion.png" alt="Morpion"></a>
+                    <a href="#"><img src="./img/justePrix.png" alt="justePrix"></a>
+                    <a href="#"><img src="./img/cultureG.png" alt="cultureG"></a>
+                    <a href="#"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
                 </div>
                 <div class="controls">
                     <div class="control prev-slide">&#9668;</div>

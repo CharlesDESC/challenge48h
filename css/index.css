@@ -48,7 +48,9 @@ th {
     padding-bottom: 30px;
 }
 
-
+tbody {
+    cursor: url(../img/cursorBlack.png)8 6, default;
+}
 
 .caseBataille {
     height: 50px;
@@ -101,7 +103,7 @@ th {
     opacity: 0;
     display: flex;
     position: absolute;
-    top: 50%;
+    top: 100px;
     left: 0;
     justify-content: space-between;
     width: 100%;
@@ -117,7 +119,7 @@ th {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(38, 38, 38);
     opacity: .5;
     transition: ease .3s;
     cursor: pointer;
@@ -142,6 +144,10 @@ th {
     min-width: 100%;
     min-height: 250px;
     height: auto;
+}
+
+img {
+    width: 300px;
 }
 
 .btnPlay {
