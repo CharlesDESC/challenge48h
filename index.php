@@ -11,8 +11,9 @@
 
 <body>
     <nav class="topBar">
-        <h1>Challenge-48H</h1>
-        <h3>Timer : <div id="timer">1</div></h3>
+        <h1><a href="./index.php">Challenge-48H</a></h1>
+        <h3>Timer : <div id="timer">1</div>
+        </h3>
         <h3>Point :</h3>
     </nav>
 

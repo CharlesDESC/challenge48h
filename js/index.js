@@ -64,7 +64,7 @@ document.addEventListener('click', (e) => {
     if (win == false) {
         let elementId = e.target.id;
         let element = document.getElementById(elementId);
-        if (element != null && element.id != 'plateau') {
+        if (element != null && element.classList.contains('caseBataille')) {
             if (!element.classList.contains('clicked')) {
                 console.log(elementId);
                 element.classList.add('clicked');
