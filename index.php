@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Zen+Dots&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
     <title>Challenge-48H</title>
 </head>
@@ -19,6 +15,15 @@
         <h3>Timer :</h3>
         <h3>Point :</h3>
     </nav>
+
+    <button id="modal-btn">Open Modal</button>
+    <div class="overlay"></div>
+    <div id="modal">
+        <h1>Regle du jeu</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at illum.
+            Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore repellendus?
+        </p>
+    </div>
 
     <main class="main">
         <div class="grilleTableau">
@@ -160,8 +165,8 @@
             <h1 class="titleMissile"><span class="span">5</span> Missiles</h1>
             <div class="carousel">
                 <div class="slides">
-                    <a href="#"><img src="./img/morpion.png" alt="Morpion"></a>
-                    <a href="#"><img src="./img/justePrix.png" alt="justePrix"></a>
+                    <a href="./morpion/morpion.php"><img src="./img/title_morpion_orange.png" alt="Morpion"></a>
+                    <a href="./justeprix/justeprix.php"><img src="./img/justePrix.png" alt="justePrix"></a>
                     <a href="#"><img src="./img/cultureG.png" alt="cultureG"></a>
                     <a href="#"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
                 </div>
