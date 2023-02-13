@@ -1,62 +1,55 @@
-// Etape 1 - Sélectionner nos éléments
-const form = document.querySelector('#formulaire');
-const input = document.querySelector('#prix');
-const error = document.querySelector('small');
-const instructions = document.querySelector('#instructions');
-let trials = 0;
-let choosedNumber;
+var num = Math.floor(Math.random() * 1000) + 1;
+var NbEssais = 0;
+var Nbmax = 10;
 
-// Etape 2 - Cacher l'erreur
-error.style.display = 'none';
+// document.addEventListener("keydown", function (event) {
+//     if (event.key == "Enter") {
 
-// Etape 3 - Générer un nombre aléatoire
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+//         Devine();
+//     }
+// });
+
+window.addEventListener("load", function () {
+    $('#exampleModal').modal('show');
+})
+
+document.getElementById('valide').addEventListener("click", function () {
+    Devine()
+})
+
+function Devine() {
+    var choisi = document.getElementById('nombre').value;
+    console.log("nb = " + choisi)
+    var text = document.getElementById("ind")
+    var essais = document.getElementById("essai")
+    if (choisi.length > 0) {
+        if (choisi < 0 || choisi > 1000) {
+            text.innerText = "Chiffre compris entre 0 et 1000 !";
+        }
+        else {
+            NbEssais++;
+            if (Nbmax - NbEssais > 1) {
+                essais.innerText = "Nombre d'essais restants : " + (Nbmax - NbEssais)
+            }
+            else {
+                essais.innerText = "Nombre d'essai restant : " + (Nbmax - NbEssais)
+            }
+            if (choisi < num)
+                text.innerText = "C'est plus !";
+            if (choisi > num)
+                text.innerText = "C'est moins !";
+            if (choisi == num) {
+                window.alert("Bravo ! chiffre trouvé en " + NbEssais + " essais.");
+                location.reload();
+
+            }
+            if (NbEssais == 10) {
+                window.alert("Dommage, le nombre correct était : " + num);
+                location.reload();
+            }
+        }
+    }
+    else {
+        text.innerText = "Entrez un nombre !";
+    }
 }
-
-const randomNumber = getRandomInt(1000);
-
-// Etape 6 - Créer la fonction vérifier
-function check(number) {
-    let instruction = document.createElement('div');
-    instruction.className = 'instruction';
-
-    if (number < randomNumber) {
-        instruction.classList.add('plus');
-        instruction.innerHTML = `#${trials} (${choosedNumber}) c'est plus`;
-    } else if (number > randomNumber) {
-        instruction.classList.add('moins');
-        instruction.innerHTML = `#${trials} (${choosedNumber}) c'est moins`;
-    } else {
-        instruction.classList.add('fini');
-        instruction.innerHTML = `#${trials} (${choosedNumber}) c'est fini, vous avez gagné en ${trials} coups`;
-        input.disabled = true;
-    }
-    instructions.prepend(instruction);
-}
-
-// Etape 4 - Vérifier que l'utilisateur donne bien un nombre
-input.addEventListener('keyup', (e) => {
-    if (isNaN(input.value)) {
-        error.style.display = 'inline-block';
-        input.style.borderColor = 'red';
-    } else {
-        error.style.display = 'none';
-        input.style.borderColor = 'black';
-    }
-});
-
-// Etape 5 - Agir à l'envoi du formulaire
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (isNaN(input.value) || !input.value) {
-        error.style.display = 'inline-block';
-        input.style.borderColor = 'red';
-    } else {
-        trials++
-        choosedNumber = input.value;
-        check(Number(choosedNumber));
-        input.value = '';
-    }
-});
-
