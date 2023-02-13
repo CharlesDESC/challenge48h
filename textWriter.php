@@ -13,7 +13,7 @@
 
 
   <?php
-    $textRdm = array('./textWriter1.txt', './textWriter2.txt' ,'./textWriter3.txt');
+    $textRdm = array('./textAsset/textWriter1.txt', './textAsset/textWriter2.txt' ,'./textAsset/textWriter3.txt');
     $rdm = rand('0', count($textRdm)-1);
     $text = fopen($textRdm[$rdm], "r");
     $text = fread($text, filesize($textRdm[$rdm]));
