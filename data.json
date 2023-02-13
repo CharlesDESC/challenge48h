@@ -1,0 +1,6 @@
+{
+    "missile" : 1,
+    "essai" : 5,   
+    "reussite" : 3,
+    "mots" : ["symfony", "java" ,"python","php", "sql"]    
+}

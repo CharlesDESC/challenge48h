@@ -1,8 +1,4 @@
-<?php
-
-?>
-<script>
-    // Définition de la durée du minuteur en secondes
+// Définition de la durée du minuteur en secondes
 var timerDuration = 900;
 
 // Fonction pour démarrer le minuteur
@@ -44,11 +40,3 @@ function getCookie(name) {
   }
   return null;
 }
-
-</script>
-<script >
-  startTimer();
-  setInterval(displayTimer, 1000);
-</script>
-
-<div id="timer"></div>
