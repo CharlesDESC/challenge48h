@@ -29,20 +29,20 @@ body {
     margin-left: 150px;
 }
 
-table {
-    background-color: rgb(20, 20, 20);
-    padding: 15px;
-}
-
 th {
     font-size: 1.5rem;
     padding-bottom: 20px;
 }
 
-.case {
+.caseBataille{
     height: 50px;
     width: 50px;
     background-color: rgb(224, 233, 255);
+}
+
+#plateau{
+    background-color: rgb(20, 20, 20);
+    padding: 15px;
 }
 
 
