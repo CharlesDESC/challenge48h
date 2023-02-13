@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Game;
+    src: url(../fonts/ChakraPetch-Regular.ttf);
+}
+
+@font-face {
+    font-family: Game-bold;
+    src: url(../fonts/ChakraPetch-Bold.ttf);
+}
+
 *,
 ::after,
 ::before {
@@ -7,13 +17,19 @@
 }
 
 body {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Game';
     background-color: rgb(38, 38, 38);
     color: rgb(224, 233, 255);
 }
 
+h1 {
+    font-size: 2rem;
+}
+
 .main {
     display: flex;
+    justify-content: space-around;
+    margin-top: 150px;
 }
 
 .topBar {
@@ -25,13 +41,11 @@ body {
 .grilleTableau {
     display: flex;
     justify-content: start;
-    margin-top: 150px;
-    margin-left: 150px;
 }
 
 th {
     font-size: 1.5rem;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 
@@ -51,16 +65,32 @@ th {
 /* ********************************************************** */
 /* Carousel */
 
+.containerCarousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleMissile {
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    background-color: rgb(20, 20, 20);
+    margin-bottom: 10px
+}
+
+.span {
+    color: rgb(232, 107, 30);
+}
+
 .carousel {
     width: 300px;
     height: 250px;
     border-radius: 3px;
-    margin-top: 150px;
-    margin-left: 150px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-
 }
 
 .carousel:hover .controls {
@@ -77,8 +107,6 @@ th {
     width: 100%;
     z-index: 99999;
     transition: all ease 0.5s;
-
-
 }
 
 .control {
@@ -93,8 +121,6 @@ th {
     opacity: .5;
     transition: ease .3s;
     cursor: pointer;
-
-
 }
 
 
@@ -110,13 +136,31 @@ th {
     display: flex;
     width: 100%;
     transition: 1s ease-in-out all;
-
 }
 
 .slide {
     min-width: 100%;
     min-height: 250px;
     height: auto;
+}
+
+.btnPlay {
+    padding: 10px;
+    margin-top: 150px;
+    width: 200px;
+    border-radius: 15px;
+    font-family: 'Game-bold';
+    font-size: 1rem;
+    background-color: rgb(232, 107, 30);
+    color: rgb(224, 233, 255);
+    border: hidden;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+.btnPlay:hover {
+    transform: scaleY(1.2);
+    width: 250px;
 }
 
 /* ********************************************************** */

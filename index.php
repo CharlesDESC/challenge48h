@@ -156,20 +156,23 @@
             </table>
         </div>
 
+        <div class="containerCarousel">
+            <h1 class="titleMissile"><span class="span">5</span> Missiles</h1>
+            <div class="carousel">
+                <div class="slides">
+                    <h1 class="slide">Morpion</h1>
+                    <h1 class="slide">Juste prix</h1>
+                    <h1 class="slide">Test rapidite</h1>
+                    <h1 class="slide">Question cultureG</h1>
+                </div>
+                <div class="controls">
+                    <div class="control prev-slide">&#9668;</div>
+                    <div class="control next-slide">&#9658;</div>
+                </div>
+            </div>
 
-        <div class="carousel">
-            <div class="slides">
-                <h1 class="slide">Morpion</h1>
-                <h1 class="slide">Juste prix</h1>
-                <h1 class="slide">Test rapidite</h1>
-                <h1 class="slide">Question cultureG</h1>
-            </div>
-            <div class="controls">
-                <div class="control prev-slide">&#9668;</div>
-                <div class="control next-slide">&#9658;</div>
-            </div>
+            <input class="btnPlay" type="button" value="Commencer a jouer">
         </div>
-
 
     </main>
 
