@@ -37,17 +37,14 @@ document.querySelector(".prev-slide").addEventListener("click", function () {
 // bataille navale grille
 const tableau = ["A5", "A4", "A3"];
 let win = false;
+let Case = [];
+for (let step = 0; step < tableau.length; step++) {
+    Case = Case.concat(false);
+}
+
 document.addEventListener('click', (e) => {
 
     if (win == false) {
-        for (let step = 0; step < 2; step++) {
-            if (document.getElementById(tableau[step]).classList.contains('clicked')) {
-                win = true;
-            } else {
-                win = false;
-            }
-        }
-
         let elementId = e.target.id;
         let element = document.getElementById(elementId);
         if (element != null && element.id != 'plateau') {
@@ -64,12 +61,14 @@ document.addEventListener('click', (e) => {
             }
         }
 
-        if (win == true) {
+        for (let step = 0; step < tableau.length; step++) {
+            if (document.getElementById(tableau[step]).classList.contains('clicked')) {
+                Case[step] = true;
+            }
+        }
+        if (!Case.includes(false)) {
+            win = true;
             alert("you win");
         }
     }
-
-
-
-}
-);
+});
