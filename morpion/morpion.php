@@ -22,15 +22,15 @@
     <div class="grilleTableau">
         <div id="fond">
             <div id="board">
-                <div class="square" id="1"></div>
-                <div class="square" id="2"></div>
-                <div class="square" id="3"></div>
-                <div class="square" id="4"></div>
-                <div class="square" id="5"></div>
-                <div class="square" id="6"></div>
-                <div class="square" id="7"></div>
-                <div class="square" id="8"></div>
-                <div class="square" id="9"></div>
+                <div class="square" id="0" onclick="play()"></div>
+                <div class="square" id="1" onclick="play()"></div>
+                <div class="square" id="2" onclick="play()"></div>
+                <div class="square" id="3" onclick="play()"></div>
+                <div class="square" id="4" onclick="play()"></div>
+                <div class="square" id="5" onclick="play()"></div>
+                <div class="square" id="6" onclick="play()"></div>
+                <div class="square" id="7" onclick="play()"></div>
+                <div class="square" id="8" onclick="play()"></div>
             </div>
         </div>       
 </div>
@@ -38,10 +38,7 @@
 <img src="../img/title_morpion.png" alt="morpion" id="morpion" />
 <h1 class="titleMissile"><span class="span">5</span> Missiles</h1>
 <input id=reset class="btnPlay" type="button" value="Rejouer">
-<input id=test class="btnPlay" type="button" value="INFO">
-    <div id="status">
-        test
-    </div>
+    <div id="status"></div>
 </div>
 </main>
 <script src="../js/morpion.js"></script>
