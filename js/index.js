@@ -32,3 +32,17 @@ document.querySelector(".prev-slide").addEventListener("click", function () {
     changeSlide(false);
     restart();
 });
+
+
+// bataille navale grille
+document.addEventListener('click', (e) => {
+    let elementId = e.target.id;
+    let element = document.getElementById(elementId);
+    if (element != null && element.id != 'plateau') {
+        if (!element.classList.contains('clicked')) {
+            console.log(elementId);
+            element.classList.add('clicked');
+        }
+    }
+}
+);
