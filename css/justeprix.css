@@ -1,32 +1,19 @@
-html,
-body {
-    background-color: #232020;
-    min-width: 500px;
+.title,
+.ind {
+    color: blue;
 }
 
-header {
-    color: #ff7315;
+.page {
     text-align: center;
-    font-size: 3em;
-}
-
-#instructions {
-    color: white;
-}
-
-.instruction {
-    padding: 15px;
-    margin: 10px 0;
-}
-
-.plus {
-    background-color: #f67280;
-}
-
-.moins {
-    background-color: #ffa372;
-}
-
-.fini {
-    background-color: #0c9463;
+    position: relative;
+    width: 500px;
+    padding: 10px;
+    top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    background-color: whitesmoke;
+    box-shadow: rgba(100, 100, 111, 0.5) 5px 5px 20px 5px;
+    /* -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0, 0, 0, 0); */
+    /* box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0, 0, 0, 0); */
 }
