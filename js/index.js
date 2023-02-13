@@ -1,3 +1,20 @@
+//Fenetre modal
+const modalBtn = document.getElementById("modal-btn")
+const modal = document.getElementById("modal")
+const overlay = document.querySelector(".overlay")
+
+modalBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    modal.style.display = 'block'
+    overlay.style.display = 'block'
+})
+
+overlay.addEventListener("click", () => {
+    modal.style.display = 'none'
+    overlay.style.display = 'none'
+})
+
+//Carousel
 const delay = 3000; //ms
 
 const slides = document.querySelector(".slides");
@@ -47,7 +64,7 @@ document.addEventListener('click', (e) => {
     if (win == false) {
         let elementId = e.target.id;
         let element = document.getElementById(elementId);
-        if (element != null && element.id != 'plateau') {
+        if (element != null && element.classList.contains('caseBataille')) {
             if (!element.classList.contains('clicked')) {
                 console.log(elementId);
                 element.classList.add('clicked');

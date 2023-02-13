@@ -14,10 +14,20 @@
 
 <body>
     <nav class="topBar">
-        <h1>Challenge-48H</h1>
-        <h3>Timer :</h3>
+        <h1><a href="./index.php">Challenge-48H</a></h1>
+        <h3>Timer : <div id="timer">1</div>
+        </h3>
         <h3>Point :</h3>
     </nav>
+
+    <button id="modal-btn">Open Modal</button>
+    <div class="overlay"></div>
+    <div id="modal">
+        <h1>Regle du jeu</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at illum.
+            Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore repellendus?
+        </p>
+    </div>
 
     <main class="main">
         <div class="grilleTableau">
@@ -159,7 +169,7 @@
             <h1 class="titleMissile"><span class="span">5</span> Missiles</h1>
             <div class="carousel">
                 <div class="slides">
-                    <a href="#"><img src="./img/morpion.png" alt="Morpion"></a>
+                    <a href="./morpion/morpion.php"><img src="./img/title_morpion_orange.png" alt="Morpion"></a>
                     <a href="./justeprix/justeprix.php"><img src="./img/justePrix.png" alt="justePrix"></a>
                     <a href="#"><img src="./img/cultureG.png" alt="cultureG"></a>
                     <a href="#"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
@@ -176,6 +186,7 @@
     </main>
 
     <script src="./js/index.js"></script>
+    <script src="./js/timer.js"></script>
 </body>
 
 </html>
