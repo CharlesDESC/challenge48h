@@ -1,21 +1,21 @@
 {
-    "missile": 8,
+    "missile": 5,
     "jeux": [
         {
             "nom": "Morpion",
-            "max_tentative": 0
+            "max_tentative": 10
         },
         {
             "nom": "Quizz",
-            "max_tentative": 1
+            "max_tentative": 5
         },
         {
             "nom": "Juste Prix",
-            "max_tentative": 6
+            "max_tentative": 5
         },
         {
             "nom": "Speed Typing",
-            "max_tentative": 2
+            "max_tentative": 5
         },
         {
             "nom": "Mastermind",

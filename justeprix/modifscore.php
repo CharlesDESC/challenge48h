@@ -6,7 +6,7 @@ $nbEssaisRestant = $data["jeux"][2]['max_tentative'];
 $data['jeux'][2]['max_tentative'] = $nbEssaisRestant - 1;
 $json_dataEssai = json_encode($data, JSON_PRETTY_PRINT);
 file_put_contents('../data.json', $json_dataEssai);
-$data['missile'] = $nbMissile + 1;
+$data['missile'] = $nbMissile + 2;
 $json_dataMissile = json_encode($data, JSON_PRETTY_PRINT);
 file_put_contents('../data.json', $json_dataMissile);
 ?>
