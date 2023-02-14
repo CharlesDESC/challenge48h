@@ -1,3 +1,25 @@
+//Fenetre modal
+const modalBtn = document.getElementById("modal-btn");
+const modal = document.getElementById("modal");
+const overlay = document.querySelector(".overlay");
+
+if (localStorage.getItem("popupClosedText")) {
+  modal.style.display = "none";
+  overlay.style.display = "none";
+}
+
+const closePopup = () => {
+  modal.style.opacity = "0";
+  modal.style.transform = "translateX(1200px)";
+  overlay.style.opacity = "0";
+  localStorage.setItem("popupClosedText", true);
+};
+
+modalBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  closePopup();
+});
+
 let key = document.getElementById("Letter");
 let word = document.getElementById("word");
 let inputArea = document.getElementById("inText")
@@ -33,13 +55,13 @@ document.addEventListener("keyup", (e) => {
 
 
       if (text.length - i > 3) {
-      word.textContent = text[i] + " " + text[i + 1] + " " + text[i + 2];
+        word.textContent = text[i] + " " + text[i + 1] + " " + text[i + 2];
       }
       if (i === text.length - 3) {
-      word.textContent = text[i] + " " + text[i + 1] + " " + text[i + 2];
+        word.textContent = text[i] + " " + text[i + 1] + " " + text[i + 2];
       }
       if (i === text.length - 2) {
-      word.textContent = text[i] + " " + text[i + 1];
+        word.textContent = text[i] + " " + text[i + 1];
       }
       if (i === text.length - 1) {
         word.textContent = text[i];

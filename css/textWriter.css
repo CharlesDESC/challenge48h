@@ -1,0 +1,51 @@
+/* Fenetre modal  */
+.overlay {
+    display: block;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(38, 38, 38);
+    display: block;
+}
+
+#modal-btn {
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.modalContenue {
+    margin-top: 50px;
+}
+
+#word {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+#inText {
+    width: 200px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background: transparent;
+    color: rgb(224, 233, 255);
+    border: 1px solid rgb(232, 107, 30);
+    transition: .3s ease-in;
+}
+
+#inText:focus {
+    width: 300px;
+}

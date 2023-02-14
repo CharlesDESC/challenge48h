@@ -1,3 +1,25 @@
+//Fenetre modal
+const modalBtn = document.getElementById("modal-btn");
+const modal = document.getElementById("modal");
+const overlay = document.querySelector(".overlay");
+
+if (localStorage.getItem("popupClosedMorpion")) {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+}
+
+const closePopup = () => {
+    modal.style.opacity = "0";
+    modal.style.transform = "translateX(1200px)";
+    overlay.style.opacity = "0";
+    localStorage.setItem("popupClosedMorpion", true);
+};
+
+modalBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closePopup();
+});
+
 // Fonction pour mettre à jour l'affichage du jeu
 function render() {
     for (var i = 0; i < board.length; i++) {
@@ -69,7 +91,7 @@ function check(indice, result) {
             return;
         }
         if (isBoardFull()) {
-            statusEl.innerText = "Match nul !";            
+            statusEl.innerText = "Match nul !";
         }
         return;
     } else {
