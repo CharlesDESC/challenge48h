@@ -17,12 +17,13 @@ const overlay = document.querySelector(".overlay")
 modalBtn.addEventListener('click', (e) => {
     e.preventDefault()
     modal.style.opacity = '0'
+    modal.style.transform = 'translateX(200px)'
     overlay.style.opacity = '0'
+
 })
 
-overlay.addEventListener("click", () => {
-    modal.classList.add('modal')
-    overlay.classList.add('overlay')
+document.getElementById('valide').addEventListener("click", function () {
+    Devine()
 })
 
 function Devine() {

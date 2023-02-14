@@ -9,10 +9,6 @@ modalBtn.addEventListener('click', (e) => {
     overlay.style.opacity = '0'
 })
 
-overlay.addEventListener("click", () => {
-    modal.classList.add('modal')
-    overlay.classList.add('overlay')
-})
 
 //Carousel
 const delay = 3000; //ms
