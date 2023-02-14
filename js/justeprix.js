@@ -57,7 +57,7 @@ function Devine() {
                 window.alert("Bravo ! chiffre trouvé en " + NbEssais + " essais ! \n Vous gagnez un missile !");
                 $.ajax({
                     type: "POST",
-                    url: './modifscore.php',
+                    url: '../justeprix/modifscore.php',
                     success: function (response) {
                         console.log("OK => " + response);
                     },
@@ -68,7 +68,7 @@ function Devine() {
                 location.reload();
             }
             if (NbEssais > 9) {
-                window.alert("Dommage, le nombre correct était : " + num);
+                window.alert("Le nombre correct était : " + num);
                 location.reload();
             }
         }
