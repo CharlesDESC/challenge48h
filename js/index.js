@@ -1,15 +1,24 @@
 //Fenetre modal
-const modalBtn = document.getElementById("modal-btn")
-const modal = document.getElementById("modal")
-const overlay = document.querySelector(".overlay")
+const modalBtn = document.getElementById("modal-btn");
+const modal = document.getElementById("modal");
+const overlay = document.querySelector(".overlay");
 
-modalBtn.addEventListener('click', (e) => {
-    e.preventDefault()
-    modal.style.opacity = '0'
-    modal.style.transform = 'translateX(1200px)'
-    overlay.style.opacity = '0'
-})
+if (localStorage.getItem("popupClosed")) {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+}
 
+const closePopup = () => {
+    modal.style.opacity = "0";
+    modal.style.transform = "translateX(1200px)";
+    overlay.style.opacity = "0";
+    localStorage.setItem("popupClosed", true);
+};
+
+modalBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closePopup();
+});
 
 //Carousel
 const delay = 3000; //ms
