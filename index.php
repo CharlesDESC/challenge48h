@@ -12,10 +12,9 @@ $data = json_decode($json, true);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
     <title>Challenge-48H</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -192,8 +191,7 @@ $data = json_decode($json, true);
                     <a href="./morpion/morpion.php"><img src="./img/title_morpion_orange.png" alt="Morpion"></a>
                     <a href="./justeprix/justeprix.php"><img src="./img/justePrix.png" alt="justePrix"></a>
                     <a href="#"><img src="./img/cultureG.png" alt="cultureG"></a>
-                    <a href="./textWriter/textWriter.php"><img src="./img/rapiditeClavier.png"
-                            alt="rapiditeClavier"></a>
+                    <a href="./textWriter/textWriter.php"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
                 </div>
                 <div class="controls">
                     <div class="control prev-slide">&#9668;</div>
