@@ -124,6 +124,12 @@ tbody {
     margin-bottom: 10px
 }
 
+.dissableelement {
+    pointer-events: none;
+    opacity: 0.5;
+    background: #CCC;
+}
+
 .span {
     color: rgb(232, 107, 30);
 }

@@ -29,7 +29,7 @@ $data = json_decode($json, true);
 </div>
 
 <main class="main">
-    <div class="grilleTableau">
+    <div id="bataillenavale" class="grilleTableau">
         <table id="plateau">
             <thead>
                 <tr>
@@ -166,7 +166,7 @@ $data = json_decode($json, true);
 
     <div class="containerCarousel">
         <h1 class="titleMissile">
-            <span class="span">
+            <span id="nbmissile" class="span">
                 <?php echo $data['missile']; ?>
             </span> Missiles
         </h1>
@@ -183,9 +183,9 @@ $data = json_decode($json, true);
             </div>
         </div>
 
-            <input id="btnPlay" type="button" value="Relancer">
-            <div class="win"></div>
-        </div>
+        <input id="btnPlay" type="button" value="Jouer">
+        <div class="win"></div>
+    </div>
 
 </main>
 
