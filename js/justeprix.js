@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var num = Math.floor(Math.random() * 1000) + 1;
 var NbEssais = 0;
 var Nbmax = 10;
@@ -69,3 +70,5 @@ function Devine() {
         text.innerText = "Entrez un nombre !";
     }
 }
+=======
+>>>>>>> d65af837f44229bcd5a69c0ec5a73ed16ca9c8ac

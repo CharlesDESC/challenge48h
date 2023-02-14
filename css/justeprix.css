@@ -49,7 +49,7 @@ a {
     text-align: center;
     position: relative;
     width: 500px;
-    height: 500px;
+    height: auto;
     padding: 10px;
     border-radius: 30px;
     background-color: rgb(20, 20, 20);
