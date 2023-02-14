@@ -61,14 +61,13 @@ function Main(color) {
                 nbEssai++;
                 if (nbEssai < 20) {
                     essai.innerHTML += "<br>Essai " + (nbEssai + 1) + " \xa0 : \xa0 ";
+                } else {
+                    alert("you loose");
                 }
             } else {
                 if (BP >= 4) {
                     alert("you win");
-                } else {
-                    alert("you loose");
                 }
-
             }
             codeplace = 0;
         }
