@@ -4,7 +4,6 @@ $data = json_decode($json, true);
 ?>
 <script>
 var max_tentative = <?php echo $data["jeux"][0]['max_tentative'] ?>;
-console.log(max_tentative);
 </script>
 
 <!DOCTYPE html>
