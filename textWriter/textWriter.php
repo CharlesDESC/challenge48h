@@ -8,65 +8,89 @@ $data = json_decode($json, true);
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include("../header.php") ?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php $route ?>css/index.css">
+    <link rel="stylesheet" href="<?php $route ?>css/justeprix.css">
+    <link rel="stylesheet" href="<?php $route ?>css/morpion.css">
+    <link rel="stylesheet" href="<?php $route ?>css/textWriter.css">
+    <link rel="stylesheet" href="<?php $route ?>css/timer.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+    <title>Challenge-48H</title>
+    <link rel="shortcut icon" href="<?php $route ?>img/logo.png" type="image/x-icon">
+</head>
 
-<main class="main">
+<body>
 
-    <div class="overlay"></div>
-    <div id="modal" class="modal">
-        <span id="modal-btn" class="material-symbols-outlined">
-            cancel
-        </span>
+    <nav class="topBar">
+        <h1><a href="<?php $route ?>index.php">Challenge-48H</a></h1>
+        <h3>Timer : <div id="timer">
+        </h3>
+    </nav>
 
-        <div class="modalContenue">
-            <h1>Regle du jeu</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at illum.
-                Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore
-                repellendus?
-            </p>
+    <main class="main">
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at illum.
-                Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore
-                repellendus?
-            </p>
+        <div class="overlay"></div>
+        <div id="modal" class="modal">
+            <span id="modal-btn" class="material-symbols-outlined">
+                cancel
+            </span>
+
+            <div class="modalContenue">
+                <h1>Regle du jeu</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at
+                    illum.
+                    Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore
+                    repellendus?
+                </p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at
+                    illum.
+                    Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore
+                    repellendus?
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="grilleTableau">
-        <div id="word" name="word"></div>
-        <div>
-            <p>
-                <input type="text" placeholder="Entrez une valeur ici" id="inText">
-            </p>
+        <div class="grilleTableau">
+            <div id="word" name="word"></div>
+            <div>
+                <p>
+                    <input type="text" placeholder="Entrez une valeur ici" id="inText">
+                </p>
+            </div>
+
+
+
         </div>
+        <div class="containerCarousel">
+            <img src="../img/rapiditeClavier.png" alt="textWriter" id="textWriter" />
+            <h1 class="titleMissile">
+                <span class="span">
+                    <?php echo $data['missile']; ?>
+                </span> Missiles
+            </h1>
+        </div>
+    </main>
 
 
 
-    </div>
-    <div class="containerCarousel">
-        <img src="../img/rapiditeClavier.png" alt="textWriter" id="textWriter" />
-        <h1 class="titleMissile">
-            <span class="span">
-                <?php echo $data['missile']; ?>
-            </span> Missiles
-        </h1>
-    </div>
-</main>
-
-
-
-<?php
+    <?php
 $textRdm = array('./textAsset/textWriter1.txt', './textAsset/textWriter2.txt', './textAsset/textWriter3.txt');
 $rdm = rand('0', count($textRdm) - 1);
 $text = fopen($textRdm[$rdm], "r");
 $text = fread($text, filesize($textRdm[$rdm]));
 $text = preg_replace('!\\r?\\n!', "", $text);
 ?>
-<script type="text/javascript">
-var text;
-text = <?php echo $text; ?>;
-</script>
-<script src="../js/textWriter.js"></script>
+    <script type="text/javascript">
+    var text;
+    text = <?php echo $text; ?>;
+    </script>
+    <script src="../js/textWriter.js"></script>
 </body>
 
 </html>

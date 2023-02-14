@@ -3,7 +3,7 @@ $json = file_get_contents('../data.json');
 $data = json_decode($json, true);
 ?>
 <script>
-var max_tentative = <?php echo $data["jeux"][0]['max_tentative'] ?>;
+    var max_tentative = <?php echo $data["jeux"][0]['max_tentative'] ?>;
 </script>
 
 <!DOCTYPE html>
@@ -29,6 +29,7 @@ var max_tentative = <?php echo $data["jeux"][0]['max_tentative'] ?>;
     <h3>Timer : <div id="timer">
     </h3>
 </nav>
+
 <body>
     <div class="overlay"></div>
     <div id="modal" class="modal">
@@ -64,7 +65,7 @@ var max_tentative = <?php echo $data["jeux"][0]['max_tentative'] ?>;
             </div>
         </div>
         <div class="containerCarousel">
-            <img src="<?php $route?>img/title_morpion.png" alt="morpion" id="morpion" />
+            <img src="../img/title_morpion.png" alt="morpion" id="morpion" />
             <h1 class="titleMissile">
                 <span class="span">
                     <?php echo $data['missile']; ?>
