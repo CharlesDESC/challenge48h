@@ -98,6 +98,7 @@ function Main(color, element) {
                         url: '../mastermind/modifscoremastermind.php',
                         success: function (response) {
                             console.log("OK => " + response);
+                            location.reload();
                         },
                         error: function (response) {
                             console.log("ERREUR => " + response);

@@ -18,7 +18,8 @@ $data = json_decode($json, true);
         <link rel="stylesheet" href="../css/textWriter.css">
         <link rel="stylesheet" href="../css/timer.css">
         <link rel="stylesheet" href="../css/mastermind.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
         <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
         <title>Challenge-48H</title>
         <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
@@ -79,7 +80,7 @@ $data = json_decode($json, true);
             </h1>
             <h1 class="titleMissile">
                 <span class="span">
-                    <?php echo $data["jeux"][0]['max_tentative'] ?>
+                    <?php echo $data["jeux"][4]['max_tentative'] ?>
                 </span> Tentative
             </h1>
         </div>
