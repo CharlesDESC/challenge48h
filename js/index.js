@@ -1,15 +1,24 @@
 //Fenetre modal
-const modalBtn = document.getElementById("modal-btn")
-const modal = document.getElementById("modal")
-const overlay = document.querySelector(".overlay")
+const modalBtn = document.getElementById("modal-btn");
+const modal = document.getElementById("modal");
+const overlay = document.querySelector(".overlay");
 
-modalBtn.addEventListener('click', (e) => {
-    e.preventDefault()
-    modal.style.opacity = '0'
-    modal.style.transform = 'translateX(1200px)'
-    overlay.style.opacity = '0'
-})
+if (localStorage.getItem("popupClosed")) {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+}
 
+const closePopup = () => {
+    modal.style.opacity = "0";
+    modal.style.transform = "translateX(1200px)";
+    overlay.style.opacity = "0";
+    localStorage.setItem("popupClosed", true);
+};
+
+modalBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closePopup();
+});
 
 //Carousel
 const delay = 3000; //ms
@@ -49,13 +58,29 @@ document.querySelector(".prev-slide").addEventListener("click", function () {
 
 
 // bataille navale grille
-const winner = document.querySelector('.win')
+const reload = document.querySelector('.btnPlay');
+const winner = document.querySelector('.win');
 const tableau = ["A5", "A4", "A3"];
+const cases = document.getElementsByClassName('caseBataille')
+
 let win = false;
 let Case = [];
 for (let step = 0; step < tableau.length; step++) {
     Case = Case.concat(false);
 }
+
+reload.addEventListener('click', function () {
+    win = false;
+    Case = [];
+    for (let step = 0; step < tableau.length; step++) {
+        Case = Case.concat(false);
+    }
+    cases.style.backgroundColor = 'white';
+    cases.style.cursor = 'default';
+    cases.classList.remove('clicked');
+});
+
+
 
 document.addEventListener('click', (e) => {
 
@@ -83,9 +108,7 @@ document.addEventListener('click', (e) => {
         }
         if (!Case.includes(false)) {
             win = true;
-            winner.innerHTML = `
-                <h2>Bien jouer vous avez gagner !!</h2>
-            `
+            winner.innerHTML = `<h2>Bien jouer vous avez gagner !!</h2>`;
         }
     }
 });
