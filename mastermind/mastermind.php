@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../css/morpion.css">
         <link rel="stylesheet" href="../css/textWriter.css">
         <link rel="stylesheet" href="../css/timer.css">
+        <link rel="stylesheet" href="../css/mastermind.css">
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
         <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
@@ -26,20 +27,40 @@
         <h3>Timer : <div id="timer">
         </h3>
     </nav>
+
+    <div class="overlay"></div>
+    <div id="modal" class="modal">
+        <span id="modal-btn" class="material-symbols-outlined">
+            cancel
+        </span>
+
+        <div class="modalContenue">
+            <h1>Regle du jeu</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at illum.
+                Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore
+                repellendus?
+            </p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at illum.
+                Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore
+                repellendus?
+            </p>
+        </div>
+    </div>
     <main class="main">
         <div class="game">
             <div class="try">
                 <div id="essai">
 
                 </div>
-                <div class="bouton">
-                    <input type="button" value="rouge" id="rouge">
-                    <input type="button" value="bleu" id="bleu">
-                    <input type="button" value="vert" id="vert">
-                    <input type="button" value="jaune" id="jaune">
-                    <input type="button" value="rose" id="rose">
-                    <input type="button" value="orange" id="orange">
-                    <input type="button" value="blanc" id="blanc">
+                <div class="contentBtn">
+                    <input class="button" type="button" value="R" id="rouge">
+                    <input class="button" type="button" value="B" id="bleu">
+                    <input class="button" type="button" value="V" id="vert">
+                    <input class="button" type="button" value="J" id="jaune">
+                    <input class="button" type="button" value="C" id="cyan">
+                    <input class="button" type="button" value="O" id="orange">
+                    <input class="button" type="button" value="M" id="marron">
                 </div>
             </div>
             <div id="place">

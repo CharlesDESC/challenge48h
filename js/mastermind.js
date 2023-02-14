@@ -1,36 +1,62 @@
+//Fenetre modal
+const modalBtn = document.getElementById("modal-btn");
+const modal = document.getElementById("modal");
+const overlay = document.querySelector(".overlay");
+
+if (localStorage.getItem("popupClosedMastermind")) {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+}
+
+const closePopup = () => {
+    modal.style.opacity = "0";
+    modal.style.transform = "translateX(1200px)";
+    overlay.style.opacity = "0";
+    localStorage.setItem("popupClosedMastermind", true);
+};
+
+modalBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closePopup();
+});
+
 let varCopie = [];
 let varEssai = [];
 let nbEssai = 0;
 let codeplace = 0;
 let BP = 0;
 let MP = 0;
+// const rouge = document.getElementById('rouge')
+// const bleu = document.getElementById('bleu')
+
+// const coul = [rouge, bleu]
 
 let essai = document.getElementById('essai');
 
 let place = document.getElementById('place');
 
 let rougebut = document.getElementById('rouge');
-rougebut.onclick = function () { Main('rouge') };
+rougebut.onclick = function () { Main('rouge', this.innerHTML = `<input class="button" type="button" value="R" id="rouge">`) };
 
 let bleubut = document.getElementById('bleu');
-bleubut.onclick = function () { Main('bleu') };
+bleubut.onclick = function () { Main('bleu', this.innerHTML = `<input class="button" type="button" value="B" id="bleu">`) };
 
 let vertbut = document.getElementById('vert');
-vertbut.onclick = function () { Main('vert') };
+vertbut.onclick = function () { Main('vert', this.innerHTML = `<input class="button" type="button" value="V" id="vert">`) };
 
 let jaunebut = document.getElementById('jaune');
-jaunebut.onclick = function () { Main('jaune') };
+jaunebut.onclick = function () { Main('jaune', this.innerHTML = `<input class="button" type="button" value="J" id="jaune">`) };
 
-let rosebut = document.getElementById('rose');
-rosebut.onclick = function () { Main('rose') };
+let rosebut = document.getElementById('cyan');
+rosebut.onclick = function () { Main('cyan', this.innerHTML = `<input class="button" type="button" value="C" id="cyan">`) };
 
 let orangebut = document.getElementById('orange');
-orangebut.onclick = function () { Main('orange') };
+orangebut.onclick = function () { Main('orange', this.innerHTML = `<input class="button" type="button" value="O" id="orange">`) };
 
-let blancbut = document.getElementById('blanc');
-blancbut.onclick = function () { Main('blanc') };
+let blancbut = document.getElementById('marron');
+blancbut.onclick = function () { Main('marron', this.innerHTML = `<input class="button" type="button" value="M" id="marron">`) };
 
-let varCoul = ['rouge', 'bleu', 'vert', 'jaune', 'rose', 'orange', 'blanc'];
+let varCoul = ['rouge', 'bleu', 'vert', 'jaune', 'cyan', 'orange', 'marron'];
 
 let varOriginal = [];
 for (let step = 0; step < 4; step++) {
@@ -42,16 +68,16 @@ essai.innerHTML += "Essais \xa0 : <br>"
 essai.innerHTML += "Essai " + (nbEssai + 1) + " \xa0 : \xa0 ";
 place.innerHTML += "Bien placé : \xa0\xa0\xa0 Mal placé :"
 
-function AddColor(color, place) {
+function AddColor(color, place, element) {
     varEssai[place] = color;
     varCopie[place] = varOriginal[place];
-    essai.innerHTML += color + "    ";
+    essai.innerHTML += element;
 }
 
-function Main(color) {
+function Main(color, element) {
     if (nbEssai < 20 && BP < 4) {
         console.log(color)
-        AddColor(color, codeplace);
+        AddColor(color, codeplace, element);
         codeplace++;
         if (codeplace > 3) {
             BP = CalculBP(varCopie, varEssai);
