@@ -1,10 +1,40 @@
-.title,
-.ind {
-    color: blue;
+@font-face {
+    font-family: Game;
+    src: url(../fonts/ChakraPetch-Regular.ttf);
 }
 
-.bod {
-    background-color: gray;
+@font-face {
+    font-family: Game-bold;
+    src: url(../fonts/ChakraPetch-Bold.ttf);
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Game';
+    background-color: rgb(38, 38, 38);
+    color: rgb(224, 233, 255);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(224, 233, 255);
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px;
 }
 
 .img_title {
@@ -18,11 +48,67 @@
     text-align: center;
     position: relative;
     width: 500px;
+    height: 500px;
     padding: 10px;
-    top: 25%;
+    margin-top: 150px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
-    background-color: whitesmoke;
+    background-color: rgb(20, 20, 20);
     box-shadow: rgba(50, 50, 51, 0.9) 5px 5px 20px 5px;
+}
+
+#nombre {
+    width: 200px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background: transparent;
+    color: rgb(224, 233, 255);
+    border: 1px solid rgb(232, 107, 30);
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#valide {
+    width: 100px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid rgb(232, 107, 30);
+    color: rgb(224, 233, 255);
+    margin-left: 115px;
+}
+
+
+/* Fenetre modal  */
+.overlay {
+    display: block;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 500px;
+    height: 600px;
+    background-color: rgb(38, 38, 38);
+    display: block;
+}
+
+#modal-btn {
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.modalContenue {
+    margin-top: 50px;
 }

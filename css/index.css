@@ -26,7 +26,7 @@ body {
 /* **************************************** */
 /* Fenetre modal  */
 .overlay {
-    display: none;
+    display: block;
     z-index: -1;
     position: absolute;
     top: 0;
@@ -36,21 +36,25 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#modal {
+.modal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
     padding: 30px;
     width: 500px;
     height: 500px;
     background-color: rgb(38, 38, 38);
-    display: none;
+    display: block;
 }
 
 #modal-btn {
     font-size: x-large;
+    cursor: pointer;
+}
+
+.modalContenue {
+    margin-top: 50px;
 }
 
 /* **************************************** */
@@ -64,21 +68,20 @@ a {
     color: rgb(224, 233, 255);
 }
 
-.main {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 150px;
-}
-
 .topBar {
     display: flex;
     justify-content: space-between;
     margin: 20px 100px;
 }
 
-.grilleTableau {
+.main {
     display: flex;
-    justify-content: start;
+    justify-content: space-around;
+    margin-top: 150px;
+}
+
+.grilleTableau {
+    text-align: center;
 }
 
 th {
@@ -205,6 +208,10 @@ img {
 .btnPlay:hover {
     transform: scaleY(1.2);
     width: 250px;
+}
+
+.win {
+    margin-top: 20px;
 }
 
 /* ********************************************************** */

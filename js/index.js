@@ -5,13 +5,13 @@ const overlay = document.querySelector(".overlay")
 
 modalBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    modal.style.display = 'block'
-    overlay.style.display = 'block'
+    modal.style.opacity = '0'
+    overlay.style.opacity = '0'
 })
 
 overlay.addEventListener("click", () => {
-    modal.style.display = 'none'
-    overlay.style.display = 'none'
+    modal.classList.add('modal')
+    overlay.classList.add('overlay')
 })
 
 //Carousel
@@ -48,10 +48,11 @@ document.querySelector(".next-slide").addEventListener("click", function () {
 document.querySelector(".prev-slide").addEventListener("click", function () {
     changeSlide(false);
     restart();
-});
+})
 
 
 // bataille navale grille
+const winner = document.querySelector('.win')
 const tableau = ["A5", "A4", "A3"];
 let win = false;
 let Case = [];
@@ -85,7 +86,9 @@ document.addEventListener('click', (e) => {
         }
         if (!Case.includes(false)) {
             win = true;
-            alert("you win");
+            winner.innerHTML = `
+                <h2>Bien jouer vous avez gagner !!</h2>
+            `
         }
     }
 });

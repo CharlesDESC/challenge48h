@@ -9,12 +9,20 @@ var Nbmax = 10;
 //     }
 // });
 
-window.addEventListener("load", function () {
-    $('#exampleModal').modal('show');
+//Fenetre modal
+const modalBtn = document.getElementById("modal-btn")
+const modal = document.getElementById("modal")
+const overlay = document.querySelector(".overlay")
+
+modalBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    modal.style.opacity = '0'
+    overlay.style.opacity = '0'
 })
 
-document.getElementById('valide').addEventListener("click", function () {
-    Devine()
+overlay.addEventListener("click", () => {
+    modal.classList.add('modal')
+    overlay.classList.add('overlay')
 })
 
 function Devine() {
