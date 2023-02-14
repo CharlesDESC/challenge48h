@@ -1,3 +1,25 @@
+//Fenetre modal
+const modalBtn = document.getElementById("modal-btn");
+const modal = document.getElementById("modal");
+const overlay = document.querySelector(".overlay");
+
+if (localStorage.getItem("popupClosedMorpion")) {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+}
+
+const closePopup = () => {
+    modal.style.opacity = "0";
+    modal.style.transform = "translateX(1200px)";
+    overlay.style.opacity = "0";
+    localStorage.setItem("popupClosedMorpion", true);
+};
+
+modalBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closePopup();
+});
+
 // Fonction pour mettre à jour l'affichage du jeu
 function render() {
     for (var i = 0; i < board.length; i++) {
@@ -54,10 +76,10 @@ function play() {
                             $.ajax({
                                 type: "POST",
                                 url: '../morpion/win.php',
-                                success: function(response) {
+                                success: function (response) {
                                     console.log("OK => " + response);
                                 },
-                                error: function(response) {
+                                error: function (response) {
                                     console.log("ERREUR => " + response);
                                 }
                             });
@@ -69,17 +91,17 @@ function play() {
                             $.ajax({
                                 type: "POST",
                                 url: '../morpion/nulle.php',
-                                success: function(response) {
+                                success: function (response) {
                                     console.log("OK => " + response);
                                 },
-                                error: function(response) {
+                                error: function (response) {
                                     console.log("ERREUR => " + response);
                                 }
                             });
                             window.alert("Match nul ! ");
                             location.reload();
-                        }  
-                    }else{
+                        }
+                    } else {
                         do {
                             tourOrdi = random(0, 8);
                             console.log(tourOrdi);
@@ -93,10 +115,10 @@ function play() {
                                 $.ajax({
                                     type: "POST",
                                     url: '../morpion/nulle.php',
-                                    success: function(response) {
+                                    success: function (response) {
                                         console.log("OK => " + response);
                                     },
-                                    error: function(response) {
+                                    error: function (response) {
                                         console.log("ERREUR => " + response);
                                     }
                                 });
@@ -107,10 +129,10 @@ function play() {
                                 $.ajax({
                                     type: "POST",
                                     url: '../morpion/lose.php',
-                                    success: function(response) {
+                                    success: function (response) {
                                         console.log("OK => " + response);
                                     },
-                                    error: function(response) {
+                                    error: function (response) {
                                         console.log("ERREUR => " + response);
                                     }
                                 });
@@ -119,13 +141,13 @@ function play() {
                             }
                         }
                     }
-                    
+
 
                 }
             }
         }
-        });
-    }
+    });
+}
 
 
 

@@ -3,13 +3,15 @@ $json = file_get_contents('../data.json');
 $data = json_decode($json, true);
 ?>
 <script>
-    var max_tentative = <?php echo $data["jeux"][0]['max_tentative'] ?>;
-    console.log(max_tentative);
+var max_tentative = <?php echo $data["jeux"][0]['max_tentative'] ?>;
+console.log(max_tentative);
 </script>
 
 <!DOCTYPE html>
 <html lang="fr">
 <?php include '../header.php'; ?>
+
+<body>
     <div class="overlay"></div>
     <div id="modal" class="modal">
         <span id="modal-btn" class="material-symbols-outlined">
@@ -52,7 +54,7 @@ $data = json_decode($json, true);
             </h1>
             <h1 class="titleMissile">
                 <span class="span">
-                <?php echo $data["jeux"][0]['max_tentative'] ?>
+                    <?php echo $data["jeux"][0]['max_tentative'] ?>
                 </span> Tentative
             </h1>
             <input id=start class="btnPlay" type="button" value="Lancer le jeux !" onclick="start()">
