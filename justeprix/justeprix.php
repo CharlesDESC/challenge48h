@@ -38,7 +38,10 @@ $data = json_decode($json, true);
             <p class="essai" id="essai"></p>
         </div>
         <div class="contain">
-            <h2><?php echo $data['missile']; ?><span style="color: orange"> Missiles</span></h2>
+            <h2><span style="color: orange"><?php echo $data['missile']; ?>
+                </span> missile(s)</h2>
+            <h2><span style="color: orange"><?php echo $data["jeux"][2]['max_tentative']; ?>
+                </span> tentative(s)</h2>
         </div>
 
         <!-- Modal -->
