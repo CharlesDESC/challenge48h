@@ -1,18 +1,9 @@
 {
-    "missile": 3,
-    "essai": 5,
-    "reussite": 3,
-    "mots": [
-        "symfony",
-        "java",
-        "python",
-        "php",
-        "sql"
-    ],
+    "missile": 0,
     "jeux": [
         {
             "nom": "Morpion",
-            "max_tentative": 4
+            "max_tentative": 12
         },
         {
             "nom": "Quizz",
@@ -20,11 +11,15 @@
         },
         {
             "nom": "Juste Prix",
-            "max_tentative": 0
+            "max_tentative": 10
         },
         {
             "nom": "Speed Typing",
-            "max_tentative": 3
+            "max_tentative": 5
+        },
+        {
+            "nom": "Mastermind",
+            "max_tentative": 5
         }
     ]
 }

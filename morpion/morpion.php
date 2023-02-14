@@ -42,8 +42,11 @@ $data = json_decode($json, true);
                 <h1>Régle du jeu</h1>
             </center>
             </br>
-            <p>Vous connaissez tous le morpion, on ne le présente plus !
-                Récupère au maximum 3 missiles !
+            <p>
+                Vous connaissez tous le morpion, on ne le présente plus !
+            </p>
+            <p>
+                Récupère au maximum 5 missiles !
             </p>
         </div>
     </div>
@@ -76,7 +79,7 @@ $data = json_decode($json, true);
                     <?php echo $data["jeux"][0]['max_tentative'] ?>
                 </span> Tentative
             </h1>
-            <input id=start class="btnPlay" type="button" value="Lancer le jeux !" onclick="start()">
+            <input id=start class="btnPlay" type="button" value="Lancer le jeu !" onclick="start()">
             <input id=reset class="btnPlay" type="hidden" value="Rejouer" onclick="reset()">
             <div id="status"></div>
         </div>
