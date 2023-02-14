@@ -102,10 +102,10 @@ document.addEventListener('click', (e) => {
 
                     $.ajax({
                         type: "POST",
-                        url: '../modiftir.php',
+                        url: './modiftir.php',
                         success: function (response) {
                             console.log("OK => " + response);
-                            $.get("../data.json", function (data) {
+                            $.get("./data.json", function (data) {
                                 if (data.missile < 1) {
                                     document.getElementById("bataillenavale").classList.add('dissableelement');
                                     alert("Perdu !!!");

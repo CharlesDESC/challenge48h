@@ -65,7 +65,7 @@ $data = json_decode($json, true);
             </div>
         </div>
         <div class="containerCarousel">
-            <img src="<?php $route ?>img/title_morpion.png" alt="morpion" id="morpion" />
+            <img src="../img/title_morpion.png" alt="morpion" id="morpion" />
             <h1 class="titleMissile">
                 <span class="span">
                     <?php echo $data['missile']; ?>
