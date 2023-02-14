@@ -78,19 +78,29 @@ $data = json_decode($json, true);
     </main>
 
 
+    <a id="start">start</a>
+  <a id="restart">restart</a>
 
-    <?php
-$textRdm = array('./textAsset/textWriter1.txt', './textAsset/textWriter2.txt', './textAsset/textWriter3.txt');
-$rdm = rand('0', count($textRdm) - 1);
-$text = fopen($textRdm[$rdm], "r");
-$text = fread($text, filesize($textRdm[$rdm]));
-$text = preg_replace('!\\r?\\n!', "", $text);
-?>
-    <script type="text/javascript">
+
+  <?php $value = '<div id="tryy"></div>';
+  echo $value;
+  ?>
+
+  <?php
+  $textTest = './textAsset/textTest.txt';
+  $textRdm = array('./textAsset/textWriter1.txt', './textAsset/textWriter2.txt', './textAsset/textWriter3.txt');
+  $rdm = rand('0', count($textRdm) - 1);
+  $text = fopen($textRdm[$rdm], "r");
+  $text = fread($text, filesize($textRdm[$rdm]));
+  $text = preg_replace('!\\r?\\n!', "", $text);
+  ?>
+  <script type="text/javascript">
     var text;
     text = <?php echo $text; ?>;
-    </script>
-    <script src="../js/textWriter.js"></script>
+  </script>
+
+  <script src="../js/textWriter.js"></script>
+
 </body>
 
 </html>
