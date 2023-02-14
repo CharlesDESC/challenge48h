@@ -48,7 +48,7 @@ $data = json_decode($json, true);
     </div>
 
     <main class="main">
-        <div class="grilleTableau">
+        <div id="bataillenavale" class="grilleTableau">
             <table id="plateau">
                 <thead>
                     <tr>
