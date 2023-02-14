@@ -23,6 +23,17 @@ body {
     overflow: hidden;
 }
 
+.contain {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    bottom: 250px;
+    margin-right: 150px;
+    background-color: gray;
+    width: 150px;
+}
+
 h1 {
     font-size: 2rem;
 }

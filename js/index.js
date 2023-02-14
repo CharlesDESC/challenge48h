@@ -58,11 +58,12 @@ document.querySelector(".prev-slide").addEventListener("click", function () {
 
 
 // bataille navale grille
-const reload = document.querySelector('.btnPlay');
+const reload = document.getElementById('btnPlay');
 const winner = document.querySelector('.win');
 const tableau = ["A5", "A4", "A3"];
-const cases = document.getElementsByClassName('caseBataille')
+const cases = document.querySelectorAll('.caseBataille');
 
+let play = false;
 let win = false;
 let Case = [];
 for (let step = 0; step < tableau.length; step++) {
@@ -71,13 +72,18 @@ for (let step = 0; step < tableau.length; step++) {
 
 reload.addEventListener('click', function () {
     win = false;
+    play = true;
     Case = [];
+    winner.innerHTML = "";
     for (let step = 0; step < tableau.length; step++) {
         Case = Case.concat(false);
     }
-    cases.style.backgroundColor = 'white';
-    cases.style.cursor = 'default';
-    cases.classList.remove('clicked');
+    cases.forEach(element => {
+        element.style.backgroundColor = 'white';
+        element.style.cursor = 'default';
+        element.classList.remove('clicked');
+    });
+
 });
 
 
@@ -85,30 +91,33 @@ reload.addEventListener('click', function () {
 document.addEventListener('click', (e) => {
 
     if (win == false) {
-        let elementId = e.target.id;
-        let element = document.getElementById(elementId);
-        if (element != null && element.classList.contains('caseBataille')) {
-            if (!element.classList.contains('clicked')) {
-                console.log(elementId);
-                element.classList.add('clicked');
-                if (tableau.includes(elementId)) {
-                    element.style.backgroundColor = 'green';
-                    element.style.cursor = 'not-allowed';
-                } else {
-                    element.style.backgroundColor = 'red';
-                    element.style.cursor = 'not-allowed';
+        if (play == true) {
+            let elementId = e.target.id;
+            let element = document.getElementById(elementId);
+            if (element != null && element.classList.contains('caseBataille')) {
+                if (!element.classList.contains('clicked')) {
+                    console.log(elementId);
+                    element.classList.add('clicked');
+                    if (tableau.includes(elementId)) {
+                        element.style.backgroundColor = 'green';
+                        element.style.cursor = 'not-allowed';
+                    } else {
+                        element.style.backgroundColor = 'red';
+                        element.style.cursor = 'not-allowed';
+                    }
                 }
             }
-        }
 
-        for (let step = 0; step < tableau.length; step++) {
-            if (document.getElementById(tableau[step]).classList.contains('clicked')) {
-                Case[step] = true;
+            for (let step = 0; step < tableau.length; step++) {
+                if (document.getElementById(tableau[step]).classList.contains('clicked')) {
+                    Case[step] = true;
+                }
             }
-        }
-        if (!Case.includes(false)) {
-            win = true;
-            winner.innerHTML = `<h2>Bien jouer vous avez gagner !!</h2>`;
+            if (!Case.includes(false)) {
+                win = true;
+                play = false;
+                winner.innerHTML = `<h2>Bien jouer vous avez gagner !!</h2>`;
+            }
         }
     }
 });
