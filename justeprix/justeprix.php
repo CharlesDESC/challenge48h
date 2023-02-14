@@ -1,8 +1,6 @@
 <?php
 $json = file_get_contents('../data.json');
 $data = json_decode($json, true);
-$nbMissile = $data["missile"];
-$nbEssaisRestant = $data["jeux"][2]['max_tentative'];
 ?>
 <html>
 
@@ -137,7 +135,7 @@ $nbEssaisRestant = $data["jeux"][2]['max_tentative'];
                     });
                     location.reload();
                 }
-                if (NbEssais == 10) {
+                if (NbEssais > 10) {
                     window.alert("Dommage, le nombre correct était : " + num);
                     location.reload();
                 }
