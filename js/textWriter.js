@@ -1,6 +1,16 @@
 let key = document.getElementById("Letter");
 let word = document.getElementById("word");
-let inputArea = document.getElementById("inText")
+let inputArea = document.getElementById("inText");
+let tryy = document.getElementById("tryy");
+let tryBool = false;
+
+
+
+
+
+
+
+
 
 
 let i = 0;
@@ -47,6 +57,16 @@ document.addEventListener("keyup", (e) => {
       if (i === text.length) {
         word.textContent = "ggwp";
         inputArea.style.display = "none";
+        $.ajax({
+          type: "POST",
+          url: './textWriter.php',
+          success: function(response) {
+              console.log("OK => " + response);
+          },
+          error: function(response) {
+              console.log("ERREUR => " + response);
+          }
+      });
       }
 
     } else {

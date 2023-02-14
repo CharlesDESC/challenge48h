@@ -172,7 +172,7 @@
                     <a href="./morpion/morpion.php"><img src="./img/title_morpion_orange.png" alt="Morpion"></a>
                     <a href="./justeprix/justeprix.php"><img src="./img/justePrix.png" alt="justePrix"></a>
                     <a href="#"><img src="./img/cultureG.png" alt="cultureG"></a>
-                    <a href="#"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
+                    <a href="./textWriter/textWriter.php"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
                 </div>
                 <div class="controls">
                     <div class="control prev-slide">&#9668;</div>
