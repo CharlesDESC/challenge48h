@@ -58,7 +58,7 @@ function Devine() {
                 });
                 location.reload();
             }
-            if (NbEssais > 10) {
+            if (NbEssais > 9) {
                 window.alert("Dommage, le nombre correct était : " + num);
                 location.reload();
             }
