@@ -26,8 +26,7 @@ $data = json_decode($json, true);
 
 <nav class="topBar">
     <h1><a href="../index.php">Challenge-48H</a></h1>
-    <h3>Timer : <div id="timer">
-    </h3>
+    
 </nav>
 
 <body>
@@ -77,7 +76,7 @@ $data = json_decode($json, true);
             <h1 class="titleMissile">
                 <span class="span">
                     <?php echo $data["jeux"][0]['max_tentative'] ?>
-                </span> Tentative
+                </span> Tentative(s)
             </h1>
             <input id=start class="btnPlay" type="button" value="Lancer le jeu !" onclick="start()">
             <input id=reset class="btnPlay" type="hidden" value="Rejouer" onclick="reset()">

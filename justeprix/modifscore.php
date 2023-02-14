@@ -9,3 +9,4 @@ file_put_contents('../data.json', $json_dataEssai);
 $data['missile'] = $nbMissile + 1;
 $json_dataMissile = json_encode($data, JSON_PRETTY_PRINT);
 file_put_contents('../data.json', $json_dataMissile);
+?>

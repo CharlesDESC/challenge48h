@@ -29,10 +29,10 @@ $data = json_decode($json, true);
 
     <nav class="topBar">
         <h1><a href="../index.php">Challenge-48H</a></h1>
-        <h3>Timer : <div id="timer">
-        </h3>
+        
     </nav>
-
+<?php
+if($data["jeux"][4]['max_tentative'] > 0){ ?>
     <div class="overlay"></div>
     <div id="modal" class="modal">
         <span id="modal-btn" class="material-symbols-outlined">
@@ -81,10 +81,13 @@ $data = json_decode($json, true);
             <h1 class="titleMissile">
                 <span class="span">
                     <?php echo $data["jeux"][4]['max_tentative'] ?>
-                </span> Tentative
+                </span> Tentative(s)
             </h1>
         </div>
     </main>
+    <?php }else{ ?>
+        <p>Plus de tentative !</p>
+    <?php } ?>
 
     <script src="../js/mastermind.js"></script>
 

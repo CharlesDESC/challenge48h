@@ -88,11 +88,11 @@ function Main(color, element) {
                 if (nbEssai < 20) {
                     essai.innerHTML += "<br>Essai " + (nbEssai + 1) + " \xa0 : \xa0 ";
                 } else {
-                    alert("you loose");
+                    essai.innerHTML += "<br>Vous avez perdu ! ";
                 }
             } else {
                 if (BP >= 4) {
-                    alert("you win");
+                    essai.innerHTML += "<br>Vous avez gagné ! ";
                     $.ajax({
                         type: "POST",
                         url: '../mastermind/modifscoremastermind.php',

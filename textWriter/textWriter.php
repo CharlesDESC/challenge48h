@@ -27,8 +27,7 @@ $data = json_decode($json, true);
 
     <nav class="topBar">
         <h1><a href="../index.php">Challenge-48H</a></h1>
-        <h3>Timer : <div id="timer">
-        </h3>
+        
     </nav>
 
     <main class="main">
@@ -48,15 +47,15 @@ $data = json_decode($json, true);
 
         <div class="grilleTableau">
             <div id="word" name="word"></div>
-            <div id="timer"></div>
-            <a id="start">start</a>
-            <a id="restart">restart</a>
+            
+            
             <div>
                 <p>
                     <input type="text" placeholder="Entrez une valeur ici" id="inText">
                 </p>
             </div>
-
+            <a class=btnPlay id="start">start</a>
+            <a  class=btnPlay id="restart">restart</a>
 
 
 

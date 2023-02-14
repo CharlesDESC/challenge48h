@@ -25,8 +25,7 @@ $data = json_decode($json, true);
 
     <nav class="topBar">
         <h1><a href="./index.php">Challenge-48H</a></h1>
-        <h3>Timer : <div id="timer">
-        </h3>
+        
     </nav>
     <div class="overlay"></div>
     <div id="modal" class="modal">

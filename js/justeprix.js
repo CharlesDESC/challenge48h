@@ -67,7 +67,7 @@ function Devine() {
                 });
                 location.reload();
             }
-            if (NbEssais > 9) {
+            if (NbEssais > 15) {
                 window.alert("Le nombre correct était : " + num);
                 location.reload();
             }
