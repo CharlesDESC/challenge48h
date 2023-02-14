@@ -17,6 +17,7 @@ $data = json_decode($json, true);
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Zen+Dots&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/morpion.css">
   <link rel="stylesheet" href="../css/index.css">
+  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
   <title>Challenge-48H</title>
 </head>
 
@@ -24,7 +25,7 @@ $data = json_decode($json, true);
   <nav class="topBar">
     <h1><a href="../index.php">Challenge-48H</a></h1>
     <h3>Timer :</h3>
-    
+
   </nav>
   <main class="main" style="margin-top:100px">
     <div class="grilleTableau">
@@ -35,16 +36,17 @@ $data = json_decode($json, true);
         </p>
       </div>
 
-      
-      
+
+
     </div>
-      <div class="containerCarousel">
-        <img src="../img/textWriter.png" alt="textWriter" id="textWriter" />
-        <h1 class="titleMissile">
-          <span class="span">
-            <?php echo $data['missile']; ?>
-          </span> Missiles</h1>
-      </div>
+    <div class="containerCarousel">
+      <img src="../img/textWriter.png" alt="textWriter" id="textWriter" />
+      <h1 class="titleMissile">
+        <span class="span">
+          <?php echo $data['missile']; ?>
+        </span> Missiles
+      </h1>
+    </div>
   </main>
 
 

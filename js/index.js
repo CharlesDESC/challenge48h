@@ -36,7 +36,7 @@ const restart = function () {
     autoChange = setInterval(changeSlide, delay);
 };
 
-// Controls
+// Controls carousel
 document.querySelector(".next-slide").addEventListener("click", function () {
     changeSlide();
     restart();
