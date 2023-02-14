@@ -96,7 +96,7 @@ document.addEventListener("keyup", (e) => {
         word.textContent = text[i];
       }
       if (i === text.length) {
-        word.textContent = "ggwp";
+        word.textContent = "bravo ! vous avez gagné un missile !";
         inputArea.style.display = "none";
         $.ajax({
           type: "POST",
