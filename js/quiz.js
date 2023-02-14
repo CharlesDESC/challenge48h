@@ -7,7 +7,7 @@ const questionElement = document.getElementById('question')
 const scoreElement = document.getElementById('score')
 const repBtn = document.getElementById('answer-btns')
 
-let randQuestions, curQuestionId, countScore
+let randQuestions, curQuestionId, countScore, idCorrectBtn, idSelectedBtn
 
 startBtn.addEventListener('click', start)
 nextBtn.addEventListener('click', () => {
@@ -59,17 +59,23 @@ function nextQuestion() {
 
 // Show question and displays answers in buttons
 function showQuestion(question) {
+  var i = 0
   questionElement.innerText = question.question
   question.reponses.forEach(reponse => {
+    i++
     const button = document.createElement('button')
+    button.classList.add(i)
     button.innerText = reponse.text
     button.classList.add('btn')
     if (reponse.correct) {
+      idCorrectBtn = button.className[0]
+      console.log('ID Correct BTN = ' + idCorrectBtn)
       button.dataset.correct = reponse.correct
     }
     button.addEventListener('click', selectReponse)
     repBtn.appendChild(button)
   })
+  
 }
 
 // Resets the whole answer grid
@@ -84,13 +90,20 @@ function resetGrid() {
 // Tests the answer then sets a next or quit button
 function selectReponse(e) {
   const selectBtn = e.target
+  idSelectedBtn = selectBtn.className[0]
+  console.log('selectBtn = ' + selectBtn.className[0])
   const correct = selectBtn.dataset.correct
   setStatusClass(document.body, correct)
   Array.from(repBtn.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
     scoreElement.innerText = missiles.toString() + " missile(s) acquis"
   })
-  
+
+  if (idSelectedBtn == idCorrectBtn) {
+    countScore++
+    console.log('CountScore =' + countScore)
+  }
+
   if (randQuestions.length > curQuestionId + 1) {
     nextBtn.classList.remove('hide')
   } else {
@@ -148,8 +161,8 @@ const questions = [
   {
     question: 'Quel est le nom actuel de la Sérénissime ?',
     reponses: [
-      { text: 'Venise', correct: true },
       { text: 'Rome', correct: false },
+      { text: 'Venise', correct: true },
       { text: 'Paris', correct: false },
       { text: 'Tokyo', correct: false }
     ],
