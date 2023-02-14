@@ -26,7 +26,7 @@ $data = json_decode($json, true);
         <div class="page">
             <h1 class="title"> Le juste prix </h1>
             <hr>
-            <p style="margin: 50px 0px;">Entrez un nombre entre 0 et 1000 inclu :</p>
+            <p style="margin: 50px 0px;">Entrez un nombre entre 0 et 1000 inclus :</p>
 
             <div>
                 <b>Votre choix : </b>
@@ -56,7 +56,7 @@ $data = json_decode($json, true);
             </div>
             <h1>Regle du jeu</h1>
             <p>Le but est simple ! Pour gagner un point, le joueur doit trouver le bon nombre compris entre 0 et
-                1000 inclu en 10 essais ou moins. </p>
+                1000 inclus en 10 essais ou moins. </p>
 
             <p> <img src="../img/warning.png" width="30" height="30" />
                 - Vérifiez bien votre nombre de chance(s) avant de valider car vous pouvez valider 2 fois d'affilée la même
