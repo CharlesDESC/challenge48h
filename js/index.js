@@ -71,6 +71,7 @@ for (let step = 0; step < tableau.length; step++) {
 }
 
 reload.addEventListener('click', function () {
+    reload.classList.add("dissableelement");
     win = false;
     play = true;
     Case = [];
@@ -98,6 +99,25 @@ document.addEventListener('click', (e) => {
                 if (!element.classList.contains('clicked')) {
                     console.log(elementId);
                     element.classList.add('clicked');
+
+                    $.ajax({
+                        type: "POST",
+                        url: '../modiftir.php',
+                        success: function (response) {
+                            console.log("OK => " + response);
+                            $.get("../data.json", function (data) {
+                                if (data.missile < 1) {
+                                    document.getElementById("bataillenavale").classList.add('dissableelement');
+                                    alert("Perdu !!!");
+                                }
+                                document.getElementById("nbmissile").innerText = data.missile;
+                            });
+                        },
+                        error: function (response) {
+                            console.log("ERREUR => " + response);
+                        }
+                    });
+
                     if (tableau.includes(elementId)) {
                         element.style.backgroundColor = 'green';
                         element.style.cursor = 'not-allowed';
