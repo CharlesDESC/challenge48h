@@ -8,7 +8,8 @@ var max_tentative = <?php echo $data["jeux"][0]['max_tentative'] ?>;
 
 <!DOCTYPE html>
 <html lang="fr">
-<?php include ("header.php"); ?>
+
+<?php include("header.php"); ?>
 
 <body>
     <div class="overlay"></div>
