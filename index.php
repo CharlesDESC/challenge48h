@@ -190,8 +190,8 @@ $data = json_decode($json, true);
 
 </main>
 
-<script src="<?php $route ?>js/index.js"></script>
-<script src="<?php $route ?>js/timer.js"></script>
+<script src="js/index.js"></script>
+<script src="js/timer.js"></script>
 </body>
 
 </html>
