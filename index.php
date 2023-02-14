@@ -199,7 +199,7 @@ $data = json_decode($json, true);
                 </div>
             </div>
 
-            <input class="btnPlay" type="button" value="Relancer">
+            <input id="btnPlay" type="button" value="Relancer">
             <div class="win"></div>
         </div>
 
