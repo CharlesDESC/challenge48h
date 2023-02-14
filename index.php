@@ -1,3 +1,9 @@
+<?php
+$json = file_get_contents('data.json');
+$data = json_decode($json, true);
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Zen+Dots&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
     <title>Challenge-48H</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -166,13 +173,16 @@
         </div>
 
         <div class="containerCarousel">
-            <h1 class="titleMissile"><span class="span">5</span> Missiles</h1>
+        <h1 class="titleMissile">
+          <span class="span">
+            <?php echo $data['missile']; ?>
+          </span> Missiles</h1>
             <div class="carousel">
                 <div class="slides">
                     <a href="./morpion/morpion.php"><img src="./img/title_morpion_orange.png" alt="Morpion"></a>
                     <a href="./justeprix/justeprix.php"><img src="./img/justePrix.png" alt="justePrix"></a>
                     <a href="#"><img src="./img/cultureG.png" alt="cultureG"></a>
-                    <a href="#"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
+                    <a href="./textWriter/textWriter.php"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
                 </div>
                 <div class="controls">
                     <div class="control prev-slide">&#9668;</div>

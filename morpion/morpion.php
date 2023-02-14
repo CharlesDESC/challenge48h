@@ -1,3 +1,8 @@
+<?php
+$json = file_get_contents('../data.json');
+$data = json_decode($json, true);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -36,7 +41,10 @@
 </div>
 <div class="containerCarousel">
 <img src="../img/title_morpion.png" alt="morpion" id="morpion" />
-<h1 class="titleMissile"><span class="span">5</span> Missiles</h1>
+<h1 class="titleMissile">
+          <span class="span">
+            <?php echo $data['missile']; ?>
+          </span> Missiles</h1>
 <input id=start class="btnPlay" type="button" value="Lancer le jeux !" onclick="start()">
 <input id=reset class="btnPlay" type="hidden" value="Rejouer" onclick="reset()">
     <div id="status"></div>
