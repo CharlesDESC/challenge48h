@@ -1,3 +1,8 @@
+<?php
+$json = file_get_contents('../data.json');
+$data = json_decode($json, true);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,22 +27,26 @@
     <div class="grilleTableau">
         <div id="fond">
             <div id="board">
-                <div class="square" id="0" onclick="play()"></div>
-                <div class="square" id="1" onclick="play()"></div>
-                <div class="square" id="2" onclick="play()"></div>
-                <div class="square" id="3" onclick="play()"></div>
-                <div class="square" id="4" onclick="play()"></div>
-                <div class="square" id="5" onclick="play()"></div>
-                <div class="square" id="6" onclick="play()"></div>
-                <div class="square" id="7" onclick="play()"></div>
-                <div class="square" id="8" onclick="play()"></div>
+                <div class="square" id="0" ></div>
+                <div class="square" id="1" ></div>
+                <div class="square" id="2" ></div>
+                <div class="square" id="3" ></div>
+                <div class="square" id="4" ></div>
+                <div class="square" id="5" ></div>
+                <div class="square" id="6" ></div>
+                <div class="square" id="7" ></div>
+                <div class="square" id="8" ></div>
             </div>
         </div>       
 </div>
 <div class="containerCarousel">
 <img src="../img/title_morpion.png" alt="morpion" id="morpion" />
-<h1 class="titleMissile"><span class="span">5</span> Missiles</h1>
-<input id=reset class="btnPlay" type="button" value="Rejouer">
+<h1 class="titleMissile">
+          <span class="span">
+            <?php echo $data['missile']; ?>
+          </span> Missiles</h1>
+<input id=start class="btnPlay" type="button" value="Lancer le jeux !" onclick="start()">
+<input id=reset class="btnPlay" type="hidden" value="Rejouer" onclick="reset()">
     <div id="status"></div>
 </div>
 </main>

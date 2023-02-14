@@ -1,3 +1,9 @@
+<?php
+$json = file_get_contents('data.json');
+$data = json_decode($json, true);
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,6 +15,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
     <title>Challenge-48H</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -175,7 +182,11 @@
         </div>
 
         <div class="containerCarousel">
-            <h1 class="titleMissile"><span class="span">5</span> Missiles</h1>
+            <h1 class="titleMissile">
+                <span class="span">
+                    <?php echo $data['missile']; ?>
+                </span> Missiles
+            </h1>
             <div class="carousel">
                 <div class="slides">
                     <a href="./morpion/morpion.php"><img src="./img/title_morpion_orange.png" alt="Morpion"></a>
