@@ -191,7 +191,7 @@ $data = json_decode($json, true);
             <h1 class="titleMissile">
                 <span id="nbmissile" class="span">
                     <?php echo $data['missile']; ?>
-                </span> Missiles
+                </span> Missile(s)
             </h1>
             <div class="carousel">
                 <div class="slides">
