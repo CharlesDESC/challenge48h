@@ -60,7 +60,7 @@ document.querySelector(".prev-slide").addEventListener("click", function () {
 // bataille navale grille
 const reload = document.getElementById('btnPlay');
 const winner = document.querySelector('.win');
-const tableau = ["A5", "A4", "A3"];
+const tableau = ["C9", "D9", "E9"];
 const cases = document.querySelectorAll('.caseBataille');
 
 let play = false;
