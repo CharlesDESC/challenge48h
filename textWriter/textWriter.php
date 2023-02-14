@@ -17,8 +17,7 @@ $data = json_decode($json, true);
     <link rel="stylesheet" href="../css/morpion.css">
     <link rel="stylesheet" href="../css/textWriter.css">
     <link rel="stylesheet" href="../css/timer.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
     <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
     <title>Challenge-48H</title>
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
@@ -42,27 +41,23 @@ $data = json_decode($json, true);
 
             <div class="modalContenue">
                 <h1>Regle du jeu</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at
-                    illum.
-                    Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore
-                    repellendus?
-                </p>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at
-                    illum.
-                    Eos, debitis iusto? Laudantium esse unde veniam quaerat voluptatem! Saepe, facere. At, dolore
-                    repellendus?
+                <p>Le but : etre le plus rapide pour ecrire le texte mais sans faire d'erreur. Attention tu as le droit qu'à 5 erreur et elles sont pas affichées pour plus de difficulté !
                 </p>
             </div>
         </div>
 
         <div class="grilleTableau">
             <div id="word" name="word"></div>
+            <div id="timer"></div>
+            <a id="start">start</a>
+            <a id="restart">restart</a>
             <div>
                 <p>
                     <input type="text" placeholder="Entrez une valeur ici" id="inText">
                 </p>
             </div>
+
+
 
 
 
@@ -78,28 +73,26 @@ $data = json_decode($json, true);
     </main>
 
 
-    <a id="start">start</a>
-  <a id="restart">restart</a>
 
 
-  <?php $value = '<div id="tryy"></div>';
-  echo $value;
-  ?>
+    <?php $value = '<div id="tryy"></div>';
+    echo $value;
+    ?>
 
-  <?php
-  $textTest = './textAsset/textTest.txt';
-  $textRdm = array('./textAsset/textWriter1.txt', './textAsset/textWriter2.txt', './textAsset/textWriter3.txt');
-  $rdm = rand('0', count($textRdm) - 1);
-  $text = fopen($textRdm[$rdm], "r");
-  $text = fread($text, filesize($textRdm[$rdm]));
-  $text = preg_replace('!\\r?\\n!', "", $text);
-  ?>
-  <script type="text/javascript">
-    var text;
-    text = <?php echo $text; ?>;
-  </script>
+    <?php
+    $textTest = './textAsset/textTest.txt';
+    $textRdm = array('./textAsset/textWriter1.txt', './textAsset/textWriter2.txt', './textAsset/textWriter3.txt');
+    $rdm = rand('0', count($textRdm) - 1);
+    $text = fopen($textRdm[$rdm], "r");
+    $text = fread($text, filesize($textRdm[$rdm]));
+    $text = preg_replace('!\\r?\\n!', "", $text);
+    ?>
+    <script type="text/javascript">
+        var text;
+        text = <?php echo $text; ?>;
+    </script>
 
-  <script src="../js/textWriter.js"></script>
+    <script src="../js/textWriter.js"></script>
 
 </body>
 
