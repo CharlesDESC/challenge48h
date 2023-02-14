@@ -7,7 +7,7 @@ const questionElement = document.getElementById('question')
 const scoreElement = document.getElementById('score')
 const repBtn = document.getElementById('answer-btns')
 
-let randQuestions, curQuestionId
+let randQuestions, curQuestionId, countScore
 
 startBtn.addEventListener('click', start)
 nextBtn.addEventListener('click', () => {
@@ -21,10 +21,6 @@ function start() {
   console.log('Started !')
   startBtn.classList.add('hide')
 
-  // randQuestions = questions.sort(() => Math.random() - .5)
-  /* randQuestions = questions.sort(function(a,b) {
-    return a.niveau - b.niveau
-  }) */
   curQuestionId = 0
   countScore = 0
 
@@ -70,7 +66,6 @@ function showQuestion(question) {
     button.classList.add('btn')
     if (reponse.correct) {
       button.dataset.correct = reponse.correct
-      countScore++
     }
     button.addEventListener('click', selectReponse)
     repBtn.appendChild(button)
@@ -86,7 +81,7 @@ function resetGrid() {
   }
 }
 
-// Tests the answer and sets a next or quit button
+// Tests the answer then sets a next or quit button
 function selectReponse(e) {
   const selectBtn = e.target
   const correct = selectBtn.dataset.correct
@@ -95,10 +90,15 @@ function selectReponse(e) {
     setStatusClass(button, button.dataset.correct)
     scoreElement.innerText = missiles.toString() + " missile(s) acquis"
   })
-
+  
   if (randQuestions.length > curQuestionId + 1) {
     nextBtn.classList.remove('hide')
   } else {
+    if (countScore == 3) {
+      missiles++
+      modifScore()
+      scoreElement.innerText = missiles.toString() + " missile(s) acquis"
+    }
     quitBtn.classList.remove('hide')
   }
 
@@ -109,10 +109,6 @@ function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
     element.classList.add('correct')
-    if (countScore == 3) {
-      missiles++
-      countScore = 0
-    }
   } else {
     element.classList.add('wrong')
   }
@@ -124,6 +120,18 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
 }
 
+function modifScore() {
+  $.ajax({
+    type: "POST",
+    url: "../quiz/modifscore.php",
+    success: function(response) {
+        console.log("OK => " + response);
+    },
+    error: function(response) {
+        console.log("ERREUR => " + response);
+    }
+});
+}
 
 // List of questions
 const questions = [

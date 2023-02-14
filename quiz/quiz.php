@@ -3,10 +3,6 @@ $json = file_get_contents('../data.json', true);
 $data = json_decode($json, true);
 $tries = $data['jeux'][1]['max_tentative'];
 $missiles = $data['missile'];
-$data['jeux'][1]['max_tentative'] = $tries-1;
-$data['missile'] = $missiles+1;
-$json_data = json_encode($data, JSON_PRETTY_PRINT);
-file_put_contents('../data.json', $json_data) 
 ?>
 
 <!DOCTYPE html>
@@ -16,11 +12,9 @@ file_put_contents('../data.json', $json_data)
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/quiz_style.css">
-  <script type="text/javascript">
-    var tries = "<?= $tries ?>";
-    var missiles = "<?= $missiles ?>";
-  </script>
   <script defer src="../js/quiz.js"></script>
+  <script type="text/javascript">var tries = "<?= $tries ?>"; var missiles = "<?= $missiles ?>";</script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
@@ -37,16 +31,17 @@ file_put_contents('../data.json', $json_data)
     II. Cliquer sur une réponse la valide automatiquement, gardez vos doigts en laisse. <br>
     III. Afin de remporter un missile, vous devrez répondre correctement aux <strong>trois</strong> questions. <br>
     IV. Bien sûr, se servir d'Internet n'est pas autorisé, pas plus qu'inspecter les scripts !<br>
-    V. Vous aurez droit à trois parties <strong>maximum</strong>, tâchez de les jouer intelligemment.<br><br>
+    V. Vous aurez droit à trois parties <strong>maximum</strong>, tâchez de les jouer intelligemment.<br>
+    VI. <strong>Rafraîchir la page vous décompte une tentative. F5 ou Ctrl+R prohibé !</strong><br>
     Attention : vous ne pourrez pas revenir en arrière. </p></div>
 
     <div id="q_container" class="hide">
       <div id="question">Question</div>
       <div id="answer-btns" class="btn-grid">
-        <button class="btn"></button>
-        <button class="btn"></button>
-        <button class="btn"></button>
-        <button class="btn"></button>
+        <button class="btn" id="submit-btn-one"></button>
+        <button class="btn" id="submit-btn-two"></button>
+        <button class="btn" id="submit-btn-three"></button>
+        <button class="btn" id="submit-btn-four"></button>
       </div>
     </div>
 
