@@ -1,5 +1,5 @@
 {
-    "missile": -1,
+    "missile": 24,
     "essai": 5,
     "reussite": 3,
     "mots": [
@@ -12,7 +12,7 @@
     "jeux": [
         {
             "nom": "Morpion",
-            "max_tentative": 8
+            "max_tentative": 9
         },
         {
             "nom": "Quizz",

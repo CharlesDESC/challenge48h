@@ -1,3 +1,10 @@
+if (max_tentative == 0) {
+    changeBtn = document.getElementById("start");
+    changeBtn.type = 'hidden';
+    changeBtn = document.getElementById("reset");
+    changeBtn.type = 'hidden';
+}
+
 //Fenetre modal
 const modalBtn = document.getElementById("modal-btn");
 const modal = document.getElementById("modal");
