@@ -1,25 +1,3 @@
-//Fenetre modal
-const modalBtn = document.getElementById("modal-btn");
-const modal = document.getElementById("modal");
-const overlay = document.querySelector(".overlay");
-
-if (localStorage.getItem("popupClosedMorpion")) {
-    modal.style.display = "none";
-    overlay.style.display = "none";
-}
-
-const closePopup = () => {
-    modal.style.opacity = "0";
-    modal.style.transform = "translateX(1200px)";
-    overlay.style.opacity = "0";
-    localStorage.setItem("popupClosedMorpion", true);
-};
-
-modalBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    closePopup();
-});
-
 // Fonction pour mettre à jour l'affichage du jeu
 function render() {
     for (var i = 0; i < board.length; i++) {
@@ -34,7 +12,7 @@ function init() {
     player = "O";
     ordi = "X";
     statusEl = document.getElementById("status");
-    statusEl.innerText = "C'est à vous de jouer !";
+    statusEl.innerText = "Nombre de tentatives : " + max_tentative;
     render();
 }
 
@@ -50,13 +28,12 @@ function start() {
     changeBtn = document.getElementById("reset");
     changeBtn.type = 'button';
     statusEl.innerText = "C'est à vous de jouer !";
-
 }
 
 // Fonction pour relancer une partie
 function reset() {
     console.log("reset");
-    init();
+    location.reload();
 }
 
 // Fonction pour jouer
@@ -67,37 +44,90 @@ function play() {
         let element = document.getElementById(elementId);
         if (element != null && element.classList.contains('square')) {
             if (!element.classList.contains('clicked')) {
-                check(elementId, player);
-                do {
-                    tourOrdi = random(0, 8);
-                    console.log(tourOrdi);
-                } while (board[tourOrdi] != "");
-                check(tourOrdi, ordi);
-            }
-        }
-    });
-}
+                if (board[elementId] == "") {
+                    board[elementId] = player;
+                    element.classList.add('clicked');
+                    element.innerText = board[elementId];
+                    if (isGameOver()) {
+                        if (isWinner('O')) {
+                            statusEl.innerText = "Vous avez gagné !";
+                            $.ajax({
+                                type: "POST",
+                                url: '../morpion/win.php',
+                                success: function(response) {
+                                    console.log("OK => " + response);
+                                },
+                                error: function(response) {
+                                    console.log("ERREUR => " + response);
+                                }
+                            });
+                            window.alert("Vous avez gagné !");
+                            location.reload();
+                        }
+                        if (isBoardFull()) {
+                            statusEl.innerText = "Match nul !";
+                            $.ajax({
+                                type: "POST",
+                                url: '../morpion/nulle.php',
+                                success: function(response) {
+                                    console.log("OK => " + response);
+                                },
+                                error: function(response) {
+                                    console.log("ERREUR => " + response);
+                                }
+                            });
+                            window.alert("Match nul ! ");
+                            location.reload();
+                        }  
+                    }else{
+                        do {
+                            tourOrdi = random(0, 8);
+                            console.log(tourOrdi);
+                        } while (board[tourOrdi] != "");
+                        board[tourOrdi] = ordi;
+                        document.getElementById(tourOrdi).classList.add('clicked');
+                        document.getElementById(tourOrdi).innerText = board[tourOrdi];
+                        if (isGameOver()) {
+                            if (isBoardFull()) {
+                                statusEl.innerText = "Match nul !";
+                                $.ajax({
+                                    type: "POST",
+                                    url: '../morpion/nulle.php',
+                                    success: function(response) {
+                                        console.log("OK => " + response);
+                                    },
+                                    error: function(response) {
+                                        console.log("ERREUR => " + response);
+                                    }
+                                });
+                                window.alert("Match nul ! ");
+                                location.reload();
+                            } if (isWinner('X')) {
+                                statusEl.innerText = "Vous avez perdu !";
+                                $.ajax({
+                                    type: "POST",
+                                    url: '../morpion/lose.php',
+                                    success: function(response) {
+                                        console.log("OK => " + response);
+                                    },
+                                    error: function(response) {
+                                        console.log("ERREUR => " + response);
+                                    }
+                                });
+                                window.alert("Vous avez perdu !");
+                                location.reload();
+                            }
+                        }
+                    }
+                    
 
-// Fonction de vérification
-function check(indice, result) {
-    if (board[indice] == "") {
-        board[indice] = result;
-        document.getElementById(indice).classList.add('clicked')
-        document.getElementById(indice).innerText = board[indice];
-        if (isGameOver()) {
-            if (isWinner(result)) {
-                statusEl.innerText = "Vous avez gagné !";
+                }
             }
-            return;
         }
-        if (isBoardFull()) {
-            statusEl.innerText = "Match nul !";
-        }
-        return;
-    } else {
-        console.log("case déjà prise");
+        });
     }
-}
+
+
 
 // Fonction pour vérifier si le jeu est terminé
 function isGameOver() {
