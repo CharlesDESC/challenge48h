@@ -101,6 +101,13 @@ body.correct {
   text-align:center;
 }
 
+#no_question {
+  padding:10px 0;
+  background-color:hsl(0, 0%, 20%);
+  color:white;
+  text-align:center;
+}
+
 #score {
   margin-top:20px;
   padding:10px 0;

@@ -1,11 +1,26 @@
+<?php
+$json = file_get_contents('../data.json', true);
+$data = json_decode($json, true);
+$tries = $data['jeux'][1]['max_tentative'];
+$missiles = $data['missile'];
+$data['jeux'][1]['max_tentative'] = $tries-1;
+$data['missile'] = $missiles+1;
+$json_data = json_encode($data, JSON_PRETTY_PRINT);
+file_put_contents('../data.json', $json_data) 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="quiz_style.css">
-  <script defer src="quiz.js"></script>
+  <link rel="stylesheet" href="../css/quiz_style.css">
+  <script type="text/javascript">
+    var tries = "<?= $tries ?>";
+    var missiles = "<?= $missiles ?>";
+  </script>
+  <script defer src="../js/quiz.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
@@ -14,7 +29,9 @@
 
 <body>
   <div class="container">
-    <div id="rules"><h1>C'est l'heure du quiz !</h1>
+    <div id="no_questions" class="hide">Vous n'avez plus de tentatives restantes !</div>
+    <div id="rules">
+      <h1>C'est l'heure du quiz !</h1>
     <p>Ce mini-jeu consiste en un simple quiz de culture générale. Sport, cinéma, politique, histoire et autres domaines seront à l'honneur dans une suite aléatoire de devinettes.</p>
     <p>I. Une série de trois questions vous sera présentée, dans l'ordre croissant de difficulté. <br>
     II. Cliquer sur une réponse la valide automatiquement, gardez vos doigts en laisse. <br>
@@ -39,7 +56,7 @@
       <button id="btn-quit" class="btn-quit btn hide" onclick="location='../index.php'">Quit</button>
     </div>
 
-    <div id="score" class="hide"></div>
+    <div id="score" class="hide"><?php echo $missiles?> missile(s) acquis</div>
   </div>
 </body>
 </html>
