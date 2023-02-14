@@ -7,6 +7,10 @@
 </head>
 
 <body>
+  <a id="start">start</a>
+  <a id="restart">restart</a>
+
+
   <p><input type="text" placeholder="Entrez une valeur ici" id="inText"></p>
   <div id="word" name="word"></div>
 

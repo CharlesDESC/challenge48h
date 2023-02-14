@@ -1,5 +1,5 @@
 {
-    "missile": 2,
+    "missile": 131,
     "essai": 5,
     "reussite": 3,
     "mots": [
@@ -24,7 +24,7 @@
         },
         {
             "nom": "Speed Typing",
-            "max_tentative": 2
+            "max_tentative": 3
         }
     ]
 }

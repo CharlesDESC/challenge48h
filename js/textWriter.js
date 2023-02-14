@@ -2,19 +2,34 @@ let key = document.getElementById("Letter");
 let word = document.getElementById("word");
 let inputArea = document.getElementById("inText");
 let tryy = document.getElementById("tryy");
+let button = document.getElementById("start");
+let restart = document.getElementById("restart");
+
+
 let tryBool = false;
-
-
-
-
-
-
-
-
-
-
 let i = 0;
 let point = 0;
+
+
+word.style.display = "none";
+inputArea.style.display = "none";
+restart.style.display = "none";
+
+
+
+button.addEventListener("click", () => {
+  word.style.display = "flex";
+  inputArea.style.display = "flex";
+  button.style.display = "none";
+  restart.style.display = "flex";
+});
+
+restart.addEventListener("click", () => {
+  location. reload()
+});
+
+
+
 
 text = text.toLowerCase();
 text = text.split(" ");
