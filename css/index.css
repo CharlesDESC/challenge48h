@@ -20,6 +20,7 @@ body {
     font-family: 'Game';
     background-color: rgb(38, 38, 38);
     color: rgb(224, 233, 255);
+    overflow: hidden;
 }
 
 

@@ -6,6 +6,7 @@ const overlay = document.querySelector(".overlay")
 modalBtn.addEventListener('click', (e) => {
     e.preventDefault()
     modal.style.opacity = '0'
+    modal.style.transform = 'translateX(1200px)'
     overlay.style.opacity = '0'
 })
 
