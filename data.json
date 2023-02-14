@@ -15,11 +15,7 @@
         },
         {
             "nom": "Speed Typing",
-            "max_tentative": 5
-        },
-        {
-            "nom": "Mastermind",
-            "max_tentative": 5
+            "max_tentative": 3
         }
     ]
 }

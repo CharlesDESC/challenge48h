@@ -93,6 +93,16 @@ function Main(color, element) {
             } else {
                 if (BP >= 4) {
                     alert("you win");
+                    $.ajax({
+                        type: "POST",
+                        url: '../mastermind/modifscoremastermind.php',
+                        success: function (response) {
+                            console.log("OK => " + response);
+                        },
+                        error: function (response) {
+                            console.log("ERREUR => " + response);
+                        }
+                    });
                 }
             }
             codeplace = 0;
