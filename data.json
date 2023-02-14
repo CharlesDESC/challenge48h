@@ -12,7 +12,7 @@
     "jeux": [
         {
             "nom": "Morpion",
-            "max_tentative": 3
+            "max_tentative": 8
         },
         {
             "nom": "Quizz",
