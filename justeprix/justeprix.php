@@ -10,6 +10,7 @@ $data = json_decode($json, true);
     <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
     <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
 </head>
 </head>
 
@@ -55,7 +56,8 @@ $data = json_decode($json, true);
                 1000 inclu en 10 essais ou moins. </p>
 
             <p> <img src="../img/warning.png" width="30" height="30" />
-                - Vérifiez bien votre nombre de chance(s) avant de valider car vous pouvez valider 2 fois d'affilée la même réponse !</p>
+                - Vérifiez bien votre nombre de chance(s) avant de valider car vous pouvez valider 2 fois d'affilée la même
+                réponse !</p>
             <p>- Vous pouvez récupérer encore <?php echo $data["jeux"][2]['max_tentative']; ?> missiles</p>
         </div>
         </div>

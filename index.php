@@ -176,6 +176,7 @@ $data = json_decode($json, true);
                 <a href="./justeprix/justeprix.php"><img src="./img/justePrix.png" alt="justePrix"></a>
                 <a href="#"><img src="./img/cultureG.png" alt="cultureG"></a>
                 <a href="./textWriter/textWriter.php"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
+                <a href="./mastermind/mastermind.php"><img src="./img/mastermind.png" alt="mastermind"></a>
             </div>
             <div class="controls">
                 <div class="control prev-slide">&#9668;</div>
@@ -183,9 +184,9 @@ $data = json_decode($json, true);
             </div>
         </div>
 
-            <input id="btnPlay" type="button" value="Relancer">
-            <div class="win"></div>
-        </div>
+        <input id="btnPlay" type="button" value="Relancer">
+        <div class="win"></div>
+    </div>
 
 </main>
 
