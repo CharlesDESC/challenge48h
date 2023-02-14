@@ -16,8 +16,7 @@ $data = json_decode($json, true);
     <link rel="stylesheet" href="<?php $route ?>css/morpion.css">
     <link rel="stylesheet" href="<?php $route ?>css/textWriter.css">
     <link rel="stylesheet" href="<?php $route ?>css/timer.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
     <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
     <title>Challenge-48H</title>
     <link rel="shortcut icon" href="<?php $route ?>img/logo.png" type="image/x-icon">
@@ -194,14 +193,11 @@ $data = json_decode($json, true);
             </h1>
             <div class="carousel">
                 <div class="slides">
-                    <a href="<?php $route ?>morpion/morpion.php"><img src="./img/title_morpion_orange.png"
-                            alt="Morpion"></a>
+                    <a href="<?php $route ?>morpion/morpion.php"><img src="./img/title_morpion_orange.png" alt="Morpion"></a>
                     <a href="<?php $route ?>justeprix/justeprix.php"><img src="./img/justePrix.png" alt="justePrix"></a>
                     <a href="#"><img src="./img/cultureG.png" alt="cultureG"></a>
-                    <a href="<?php $route ?>textWriter/textWriter.php"><img src="./img/rapiditeClavier.png"
-                            alt="rapiditeClavier"></a>
-                    <a href="<?php $route ?>mastermind/mastermind.php"><img src="./img/mastermind.png"
-                            alt="mastermind"></a>
+                    <a href="<?php $route ?>textWriter/textWriter.php"><img src="./img/rapiditeClavier.png" alt="rapiditeClavier"></a>
+                    <a href="<?php $route ?>mastermind/mastermind.php"><img src="./img/mastermind.png" alt="mastermind"></a>
                 </div>
                 <div class="controls">
                     <div class="control prev-slide">&#9668;</div>
@@ -209,7 +205,7 @@ $data = json_decode($json, true);
                 </div>
             </div>
 
-            <input id="btnPlay" type="button" value="Relancer">
+            <input id="btnPlay" type="button" value="Jouer">
             <div class="win"></div>
         </div>
 
